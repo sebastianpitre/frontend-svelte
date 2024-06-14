@@ -9,7 +9,7 @@
 <div class="row pt-4">
   {#each listProductos as values}
   <div class="col-6 col-md-3 mb-4">
-    <div class="card blur shadow-blur border border-white bg-gray">
+    <div class="card bg-gray">
       <div class="card-header p-0 position-relative z-index-2">
       <div class="d-block blur-shadow-image cursor-pointer">
           <img src="{values.urlImage}" width="100%" height="160vh" alt="img-producto" class="shadow rounded-top img">
