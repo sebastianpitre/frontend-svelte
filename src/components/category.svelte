@@ -1,5 +1,5 @@
 
-<div class="_1LnEC mt-2">
+<div class="_1LnEC mt-2 d-lg-none">
     <ul class="_3r4FV bg-white mb-0 py-2  border-radius-lg">
         <li class="_2X7zW ms-n4"><a class="_1uCty _18olZ" href="/">Todos</a></li>
         <li class="_2X7zW "><a class="_1uCty " href="/estilos/rock/">Carnes, pollos y pescados</a></li>
