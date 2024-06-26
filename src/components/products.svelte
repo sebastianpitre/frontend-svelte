@@ -10,9 +10,11 @@
 <div class="row pt-4">
   <div class="col-12 text-end"><h5 class="cursor-pointer text-success">ver mas...</h5> </div>
   {#each listProductos as values}
-  <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
+  <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-3 mb-4">
     <div class="card border bg-gray position-relative">
-      <span class="bg-success col-6 text-white text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;"> Oferta</span>
+      {#if values.categoryId === 1}
+        <span class="bg-warning col-6 text-white text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">Oferta</span>
+      {/if}
 
       <div class="card-header  p-0 position-relative z-index-2" style="border-radius: 0.75rem 0.75rem 0px 0px">
       <div class="d-block blur-shadow-image cursor-pointer">

@@ -10,9 +10,9 @@
     <div class="col-12">
       <nav class="navbar navbar-expand-lg bg-white top-0 z-index-fixed shadow position-absolute py-2 start-0 end-0">
         <div class="container-fluid px-0">
-          <a class="col-md-3 font-weight-bolder ms-sm-3" href="index.html" rel="tooltip" data-placement="bottom">
+          <a class="col-md-3 font-weight-bolder " href="index.html" rel="tooltip" data-placement="bottom">
             <img class="avatar" src="/img/logo.png" alt="imglogo">
-            <span class="text-dark h4 my-auto font-weight-bold">Vitrina web CBC</span>
+            <span class="text-dark font-weight-bold">SENA EMPRESA VITRINA WEB</span>
           </a>
           <!-- <a href="pages/calcular.html" class="btn btn-sm  btn-white border border-dark  mb-0 ms-auto d-lg-none d-block">Ingresar</a> -->
           <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,7 +30,7 @@
               </li>
 
               <li class="nav-item dropdown dropdown-hover my-1 mx-2">
-                <a href="calcular.html" class="btn btn-sm bg-dark text-white mb-0">carrito</a>
+                <a href="calcular.html" class="btn btn-sm bg-dark text-white mb-0"><span class="material-symbols-outlined">shopping_cart</span></a>
               </li>
 
               
