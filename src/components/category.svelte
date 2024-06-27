@@ -1,7 +1,7 @@
 <script>
     let listCategorias = [];
 
-    fetch("http://localhost:8080/api/v1/publico/categorias")
+    fetch("http://localhost:8080/api/admin/categorias")
     .then((response) => response.json())
     .then((results) => (listCategorias = results));
 
@@ -10,7 +10,7 @@
     <ul class="_3r4FV bg-white mb-0 py-2  border-radius-lg">
         <li class="_2X7zW ms-n4"><a class="_1uCty _18olZ" href="/">Todos</a></li>
         {#each listCategorias as values}
-        <li class="_2X7zW "><a class="_1uCty " href="/estilos/rock/">{values.name}</a></li>
+        <li class="_2X7zW "><a class="_1uCty text-dark " href="/estilos/rock/">{values.nombre}</a></li>
         {/each}
     </ul>
 </div>
@@ -41,13 +41,12 @@
 ._1uCty {
     align-items: center;
     background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 16px;
+    border: 1px solid #afafaf;
+    border-radius: 10px;
     box-sizing: border-box;
-    color: #9e9e9e;
     display: flex;
     font-family: Roboto,Helvetica,Arial,sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
     padding: 7px 16px
 }

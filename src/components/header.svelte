@@ -6,10 +6,10 @@
           <img src="img/banner.webp" class="d-block w-100" alt="img/banner.webp">
         </div>
         <div class="carousel-item" data-bs-interval="2000">
-          <img src="img/banner.webp" class="d-block w-100" alt="img/banner.webp">
+          <img src="img/banner2.webp" class="d-block w-100" alt="img/banner.webp">
         </div>
         <div class="carousel-item">
-          <img src="img/banner.webp" class="d-block w-100" alt="img/banner.webp">
+          <img src="img/banner3.webp" class="d-block w-100" alt="img/banner.webp">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
