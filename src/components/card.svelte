@@ -1,6 +1,7 @@
 <script>
     export let producto;
     let noDisponible = producto.activo === false;
+    let fotoNoDisponible = producto.urlImagen === "";
 
     let descuento = 20;
     
@@ -21,7 +22,7 @@
   
     <div class="card-header p-0 position-relative z-index-2" style="border-radius: 0.75rem 0.75rem 0px 0px">
       <div class="d-block blur-shadow-image cursor-pointer">
-        <img src="{producto.urlImagen}" width="100%" height="160vh" alt="img-producto" class="shadow img" style="border-radius: 0.75rem 0.75rem 0px 0px">
+        <img src="{fotoNoDisponible ? '/img/logo.png' : producto.urlImagen}" width="100%" height="160vh" alt="img-producto" class="shadow img" style="border-radius: 0.75rem 0.75rem 0px 0px">
       </div>
       <div class="colored-shadow" style="background-image: url(&quot;{producto.urlImagen}&quot;);"></div>
     </div>
@@ -31,7 +32,7 @@
       {#if producto.promocion === true && producto.activo === true} 
         <p class="text-success text-center border-bottom border-gray mt-1 mb-0"><del class="text-underline text-dark opacity-9">$ {producto.precio} </del><span class="text-dark h5"> /</span>  $ {producto.precio-producto.precio*descuento/100} <span class="text-dark text-sm">KL</span></p>
         {:else}
-        <p class="text-success text-center border-bottom font-weight-bold border-gray mt-1 mb-0">$ {producto.precio} <span class="text-dark text-sm">KL</span></p>
+        <p class="text-success text-center border-bottom font-weight-bold border-gray mt-1 mb-0">$ {producto.precio} <span class="text-dark text-sm">{producto.unidadProducto}</span></p>
       {/if}
   
       <div class="row text-center mt-2">

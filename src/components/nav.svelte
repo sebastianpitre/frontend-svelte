@@ -11,7 +11,7 @@
       <nav class="navbar navbar-expand-lg bg-white top-0 z-index-fixed shadow position-absolute py-2 start-0 end-0">
         <div class="container-fluid px-0">
           <a class="col-md-3 font-weight-bolder " href="index.html" rel="tooltip" data-placement="bottom">
-            <img class="avatar" src="/img/logo.png" alt="imglogo">
+            <!-- <img class="avatar" src="/img/logo.png" alt="imglogo"> -->
             <span class="text-dark font-weight-bold">SENA EMPRESA VITRINA WEB</span>
           </a>
           <!-- <a href="pages/calcular.html" class="btn btn-sm  btn-white border border-dark  mb-0 ms-auto d-lg-none d-block">Ingresar</a> -->
