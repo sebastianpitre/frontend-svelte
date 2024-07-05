@@ -26,16 +26,16 @@
       <div class="colored-shadow" style="background-image: url(&quot;{producto.urlImagen}&quot;);"></div>
     </div>
     <div class="px-2 py-0">
-      <p class="text-dark text-center font-weight-bold mt-1 mb-0">{producto.nombre}</p>
+      <p class="text-dark text-center text-capitalize font-weight-bold mt-1 mb-0">{producto.nombre}</p>
 
       {#if producto.promocion === true && producto.activo === true} 
         <div class="text-warning text-center border-bottom border-gray mt-1 mb-0">
           <del class="text-underline text-start text-dark opacity-9 " style="font-size: 12px;left: 14px;">$ {producto.precio}</del>
           <span class="text-dark" style="font-size: 24px;">/</span>  $ {producto.precio-producto.precio*descuento/100} 
-          <span class="text-dark text-sm">{producto.unidadProducto}</span>
+          <span class="text-dark text-sm text-lowercase">{producto.unidadProducto}</span>
         </div>
         {:else}
-        <p class="text-success text-center border-bottom border-gray mt-1 mb-0">$ {producto.precio} <span class="text-dark text-sm">{producto.unidadProducto}</span></p>
+        <p class="text-success text-center border-bottom border-gray mt-1 mb-0">$ {producto.precio} <span class="text-dark text-sm text-lowercase">{producto.unidadProducto}</span></p>
       {/if}
   
       <div class="row text-center mt-2">

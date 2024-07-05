@@ -12,6 +12,23 @@
     .then((results)=> (listProductos=results))
 
 
+    async function eliminarProducto(id) {
+        try {
+        const response = await fetch(`http://localhost:8080/productos/${id}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            listProductos = listProductos.filter(producto => producto.id !== id);
+        } else {
+            console.error('Error al eliminar producto:', response.statusText);
+        }
+        } catch (error) {
+        console.error('Error al eliminar producto:', error);
+        }
+    }
+
+
 </script>
 
 
@@ -81,10 +98,7 @@
                                 <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
                             </td>
                             <td class="align-middle">
-                                <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                    data-toggle="tooltip" data-original-title="Edit user">
-                                    Edit
-                                </a>
+                                <button on:click={() => eliminarProducto(values.id)}>Eliminar</button>
                             </td>
                         </tr>
                         {/each}
