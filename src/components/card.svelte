@@ -3,11 +3,11 @@
     let noDisponible = producto.activo === false;
     let fotoNoDisponible = producto.urlImagen === "";
 
-    let descuento = 20;
+    let descuento = 10;
   </script>
   
   <div class="card border bg-gray {noDisponible ? 'bg-gray-200 ' : ''} position-relative">
-    {#if producto.promocion === true}
+    {#if producto.promocion === true && producto.activo === true}
         <span class="bg-warning col-6 text-white text-bold text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
         Oferta {descuento}%
         </span>
@@ -20,8 +20,8 @@
     {/if}
   
     <div class="card-header p-0 position-relative z-index-2" style="border-radius: 0.75rem 0.75rem 0px 0px">
-      <div class="d-block blur-shadow-image cursor-pointer">
-        <img src="{fotoNoDisponible ? '/img/logo.png' : producto.urlImagen}" width="100%" height="160vh" alt="img-producto" class="shadow img" style="border-radius: 0.75rem 0.75rem 0px 0px">
+      <div class="d-block blur-shadow-image cursor-pointer img-marco" >
+        <img src="{fotoNoDisponible ? '/img/logo.png' : producto.urlImagen}" width="100%" height="160vh" alt="producto" class="shadow img" style="border-radius: 0.75rem 0.75rem 0px 0px">
       </div>
       <div class="colored-shadow" style="background-image: url(&quot;{producto.urlImagen}&quot;);"></div>
     </div>
@@ -40,7 +40,9 @@
   
       <div class="row text-center mt-2">
         <div class="col-md-6 col-12">
-          <div class="btn col-12 bg-gradient-success btn-sm py-2">Ver</div>
+          <div class="btn col-12 btn-success btn-sm pb-0 py-1 px-2">
+            <span class="material-symbols-outlined">visibility</span>
+          </div>
         </div>
   
         <div class="col-md-6 col-12">
@@ -55,7 +57,10 @@
   <style>
   @media (max-width: 768px) {
     .img {
-      height: 120px;
+      height: 140px;
+    }
+    .img-marco{
+      height: 140px;
     }
   }
   </style>

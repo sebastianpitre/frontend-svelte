@@ -1,4 +1,4 @@
-<header class=" container p-0">
+<header class="container-md p-0">
 
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
