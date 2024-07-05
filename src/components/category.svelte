@@ -11,7 +11,7 @@
     <ul class="_3r4FV bg-white mb-0 py-2  border-radius-lg">
         <li class="_2X7zW ms-n4"><a class="_1uCty _18olZ" href="/">Todos</a></li>
         {#each listCategorias as values}
-        <li class="_2X7zW "><a class="_1uCty text-dark " href="/estilos/rock/">{values.nombre}</a></li>
+        <li class="_2X7zW "><a class="_1uCty text-dark " href="/estilos/rock/"><img class="icon opacity-9" src="{values.icon}" alt="icon" width="11%"><span class="ms-2 me-3 me-xl-0 ">{values.nombre}</span> </a></li>
         {/each}
     </ul>
 </div>
