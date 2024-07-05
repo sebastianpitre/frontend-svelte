@@ -1,7 +1,7 @@
 <script>
     let listProductos = [];
   
-    fetch("http://localhost:8080/api/publico/productos")
+    fetch("http://localhost:8080/productos")
   
     .then((response)=>response.json())
     .then((results)=> {

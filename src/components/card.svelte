@@ -30,7 +30,7 @@
       <p class="text-dark text-center font-weight-bold mt-1 mb-0">{producto.nombre}</p>
 
       {#if producto.promocion === true && producto.activo === true} 
-        <p class="text-success text-center border-bottom border-gray mt-1 mb-0"><del class="text-underline text-dark opacity-9">$ {producto.precio} </del><span class="text-dark h5"> /</span>  $ {producto.precio-producto.precio*descuento/100} <span class="text-dark text-sm">KL</span></p>
+        <p class="text-success text-center border-bottom border-gray mt-1 mb-0"><del class="text-underline text-dark opacity-9">$ {producto.precio} </del><span class="text-dark h5"> /</span>  $ {producto.precio-producto.precio*descuento/100} <span class="text-dark text-sm">{producto.unidadProducto}</span></p>
         {:else}
         <p class="text-success text-center border-bottom font-weight-bold border-gray mt-1 mb-0">$ {producto.precio} <span class="text-dark text-sm">{producto.unidadProducto}</span></p>
       {/if}

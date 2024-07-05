@@ -1,7 +1,8 @@
 <script>
     let listCategorias = [];
 
-    fetch("http://localhost:8080/api/admin/categorias")
+    fetch("http://localhost:8080/categorias")
+    // fetch("http://localhost:8080/api/admin/categorias")
     .then((response) => response.json())
     .then((results) => (listCategorias = results));
 

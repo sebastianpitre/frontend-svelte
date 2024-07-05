@@ -16,11 +16,14 @@
   onMount(async () => {
     try {
       // Obtener productos
-      const responseProductos = await fetch("http://localhost:8080/api/publico/productos");
+      const responseProductos = await fetch("http://localhost:8080/productos");
+      // const responseProductos = await fetch("http://localhost:8080/api/publico/productos");
+
       listProductos = await responseProductos.json();
       
       // Obtener categorías
-      const responseCategorias = await fetch("http://localhost:8080/api/admin/categorias");
+      const responseCategorias = await fetch("http://localhost:8080/categorias");
+      // const responseCategorias = await fetch("http://localhost:8080/api/admin/categorias");
       categorias = await responseCategorias.json();
       
       console.log(categorias); // Verifica en la consola si las categorías se obtienen correctamente
@@ -28,6 +31,8 @@
       console.error('Error al obtener productos o categorías:', error);
     }
   });
+
+  
 </script>
 
 
@@ -41,16 +46,16 @@
 
 
     <div class="row mt-4">
-      <div class="col-12 "><h4 class="cursor-pointer ">Ofertas</h4> </div>
-      {#each listProductos as producto}
-        {#if producto.activo === true}
-          {#if producto.promocion === true}
-            <div class="{clasesCard}">
-              <Card {producto} />
-            </div>
+        <h4 class="cursor-pointer">Ofertas</h4>
+        {#each listProductos as producto}
+          {#if producto.activo === true}
+            {#if producto.promocion === true}
+              <div class="{clasesCard}">
+                <Card {producto} />
+              </div>
+            {/if}
           {/if}
-        {/if}
-      {/each}
+        {/each}
     </div>
     
 
