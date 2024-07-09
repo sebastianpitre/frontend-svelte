@@ -1,8 +1,12 @@
-<div class="col-3 px-4">
-    <div class="card bg-dark p-2">
-        <a href="/productos" class="btn bg-gradient-dark text-white opacity-9">Productos</a>
-        <a href="/categorias" class="btn bg-gradient-dark text-white opacity-9">Categorias</a>
-        <a href="/usuarios" class="btn bg-gradient-dark text-white opacity-9">Usuarios</a>
+<div class="bg-white col-3" style="height: 100vh;">
+    <div class="row bg-gray-200">
+        <div class="col-4 p-3"><a href="/"><img class="avatar-sm" src="../img/logo.png" alt=""></a></div>
+        <div class="col my-auto text-end">User xxxx</div>
+        
     </div>
     
+        <a href="/productos" class="btn btn-outline-dark col-12 m-1 opacity-9">Productos</a>
+        <a href="/categorias" class="btn btn-outline-dark col-12 m-1 opacity-9">Categorias</a>
+        <a href="/usuarios" class="btn btn-outline-dark col-12 m-1 opacity-9">Usuarios</a>
+
 </div>

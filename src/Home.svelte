@@ -54,7 +54,7 @@
 
 
     <div class="row mt-4">
-        <h5 class="cursor-pointer">Ofertas</h5>
+        <h5 class="cursor-pointer text-monospace">Ofertas</h5>
         {#each listProductos as producto}
           {#if producto.activo === true  && producto.promocion === true}
               <div class="{clasesCard}">
@@ -70,9 +70,9 @@
         <div class="col-md-12 col-lg-12">
           <div class="row">
             <div class="col-auto">
-              <img class="icon opacity-9" src="{categoria.icon}" alt="icon-sm ">
+              <img class="icon-xs opacity-9" src="{categoria.icon}" alt="icon-sm ">
             </div>
-            <h5 class="col ms-n3">{categoria.nombre}</h5>
+            <h5 class="col ms-n3 text-monospace">{categoria.nombre}</h5>
           </div>
           
           

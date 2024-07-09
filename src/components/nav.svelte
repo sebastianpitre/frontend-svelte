@@ -25,7 +25,7 @@
             <ul class="navbar-nav navbar-nav-hover ms-auto">
 
               <li class="nav-item dropdown dropdown-hover my-1 ms-2">
-                <a href="/admin" class="btn btn-sm mb-0">admin</a>
+                <a href="/productos" class="btn btn-sm mb-0">admin</a>
               </li>
 
               <li class="nav-item dropdown dropdown-hover my-1 ms-2">
