@@ -8,10 +8,10 @@
 
 </script>
 <div class="_1LnEC mt-2">
-    <ul class="_3r4FV bg-white mb-0 py-2  border-radius-lg">
+    <ul class="_3r4FV mb-0 py-2  border-radius-lg">
         <li class="_2X7zW ms-n4"><a class="_1uCty _18olZ" href="/">Todos</a></li>
         {#each listCategorias as values}
-        <li class="_2X7zW "><a class="_1uCty text-dark " href="/estilos/rock/"><img class="icon opacity-9" src="{values.icon}" alt="icon" width="11%"><span class="ms-2 me-3 me-xl-0 ">{values.nombre}</span> </a></li>
+        <li class="_2X7zW "><a class="_1uCty " href="/estilos/rock/"><img class="icon opacity-9 bg-white" src="{values.icon}" alt="icon" width="11%"><span class="ms-2 me-3 me-xl-0 ">{values.nombre}</span> </a></li>
         {/each}
     </ul>
 </div>
@@ -42,8 +42,9 @@
 ._1uCty {
     align-items: center;
     background: #fff;
-    border: 1px solid #afafaf;
-    border-radius: 10px;
+    border-color: rgba(0,0,0,.125);
+    border-radius: 0.60rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);
     box-sizing: border-box;
     display: flex;
     font-family: Roboto,Helvetica,Arial,sans-serif;
@@ -53,6 +54,11 @@
 }
 ._1uCty:active {
     background: #f5f5f5
+}
+
+._1uCty:hover {
+    background: black;
+    color: white;
 }
 ._1uCty._18olZ {
     background: #151515;

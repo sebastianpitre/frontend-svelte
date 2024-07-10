@@ -50,11 +50,17 @@
       <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l.84 4.479 9.144-.459L13.89 4zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"></path>
       </svg><span class="ms-1">Carrito</span></button>
   </div>
+  
   <div class="container">
 
 
-    <div class="row mt-4">
-        <h5 class="cursor-pointer text-monospace">Ofertas</h5>
+    <div class="row mt-3">
+      <div class="row">
+        <div class="col-auto">
+          <img class="icon-xs opacity-9 mb-n2" src="/img/icon/star.png" alt="icon-sm ">
+        </div>
+        <p class="col ms-n3 text-2xl text-dark">Ofertas</p>
+      </div>
         {#each listProductos as producto}
           {#if producto.activo === true  && producto.promocion === true}
               <div class="{clasesCard}">
@@ -66,13 +72,13 @@
     
 
     {#each categorias as categoria}
-      <div class="row mt-2">
+      <div class="row">
         <div class="col-md-12 col-lg-12">
           <div class="row">
             <div class="col-auto">
-              <img class="icon-xs opacity-9" src="{categoria.icon}" alt="icon-sm ">
+              <img class="icon-xs opacity-9 mb-n2" src="{categoria.icon}" alt="icon-sm ">
             </div>
-            <h5 class="col ms-n3 text-monospace">{categoria.nombre}</h5>
+            <p class="col ms-n3 text-2xl text-dark">{categoria.nombre}</p>
           </div>
           
           

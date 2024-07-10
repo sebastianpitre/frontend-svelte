@@ -4,9 +4,19 @@
         <div class="col my-auto text-end">User xxxx</div>
         
     </div>
+
+    <div class="row px-5">
+        <a href="/productos" class="btnes border-bottom p-2 col-12  opacity-9">Productos</a>
+        <a href="/categorias" class="btnes border-bottom p-2 col-12  opacity-9">Categorias</a>
+        <a href="/usuarios" class="btnes border-bottom p-2 col-12  opacity-9">Usuarios</a>
+    </div>
     
-        <a href="/productos" class="btn btn-outline-dark col-12 m-1 opacity-9">Productos</a>
-        <a href="/categorias" class="btn btn-outline-dark col-12 m-1 opacity-9">Categorias</a>
-        <a href="/usuarios" class="btn btn-outline-dark col-12 m-1 opacity-9">Usuarios</a>
+        
 
 </div>
+
+<style>
+    .btnes:hover{
+        background-color: #171717;
+    }
+</style>
