@@ -98,21 +98,21 @@
     <div class="col-12 col-md-9 pt-3 mb-4 mb-md-0">
 
 
-        <div class="col-6 mx-auto">
+        <div class="col-12 mx-auto">
             <!-- Definimos el formulario -->
             <form on:submit={handleSubmit}>
                 <div class="">
                     <h3 class="text-center">Formulario de guardar categorias</h3>
                     <div class="row mx-auto pt-3 ">
                         
-                        <div class="col-6">
+                        <div class="col-12 col-md-6">
                             <div class="input-group  input-group-static my-2">
                                 <h6 class="">Nombre de la categoria</h6>
                                 <input type="text" class="form-control mt-n3" bind:value={nombre} />
                             </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-12 col-md-6">
                             <div class="input-group  input-group-static my-2">
                                 <h6 class="">Link Icono</h6>
                                 <input type="text" class="form-control mt-n3" bind:value={icon} />
@@ -148,7 +148,7 @@
                             <td>
                                 <div class="d-flex px-2 py-1">
                                     <div>
-                                        <img src="{values.icon}" class=" avatar-xs me-3">
+                                        <img src="{values.icon}" alt="img" class=" avatar-xs me-3">
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="mb-0 text-xs">{values.nombre}</h6>

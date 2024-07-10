@@ -90,6 +90,8 @@
           icon: 'success',
           title: 'Éxito',
           text: 'Producto guardado correctamente',
+          showConfirmButton: false,
+          timer: 1500
         }).then(() => {
         window.location.href = '/productos'; // Redirigir a la lista de productos
         });

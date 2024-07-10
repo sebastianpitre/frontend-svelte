@@ -7,11 +7,18 @@
     .then((results) => (listCategorias = results));
 
 </script>
-<div class="_1LnEC mt-2">
+<div class="_1LnEC ">
     <ul class="_3r4FV mb-0 py-2  border-radius-lg">
-        <li class="_2X7zW ms-n4"><a class="_1uCty _18olZ" href="/">Todos</a></li>
+        <li class="_2X7zW ms-n4">
+            <a class="_1uCty _18olZ" href="/">Todos</a>
+        </li>
         {#each listCategorias as values}
-        <li class="_2X7zW "><a class="_1uCty " href="/estilos/rock/"><img class="icon opacity-9 bg-white" src="{values.icon}" alt="icon" width="11%"><span class="ms-2 me-3 me-xl-0 ">{values.nombre}</span> </a></li>
+        <li class="_2X7zW ">
+            <a class="_1uCty " href="/estilos/rock/">
+                <img class="icon opacity-9 bg-white" src="{values.icon}" alt="icon" width="11%">
+                <span class="ms-2 me-3 me-xl-0 ">{values.nombre}</span> 
+            </a>
+        </li>
         {/each}
     </ul>
 </div>
@@ -61,9 +68,7 @@
     color: white;
 }
 ._1uCty._18olZ {
-    background: #151515;
     border-color: #151515;
-    color: #fff
 }
 li, ul {
     list-style: none;}
