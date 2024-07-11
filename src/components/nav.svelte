@@ -29,7 +29,7 @@
               </li>
 
               <li class="nav-item dropdown dropdown-hover my-1 ms-2">
-                <a href="/" class="btn btn-sm bg-gradient-success mb-0">Ingresar</a>
+                <a href="/login" class="btn btn-sm bg-gradient-success mb-0">Ingresar</a>
               </li>
               
             </ul>

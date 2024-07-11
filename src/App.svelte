@@ -8,6 +8,7 @@
   import Categorias from './pages/categorias.svelte';
   import ProductForm from './pages/ProductForm.svelte';
   import Dasboard from './pages/dasboard.svelte';
+  import Login from './pages/login.svelte';
 
 
 </script>
@@ -24,6 +25,8 @@
     <Route path="/producto/editar/:id" component={ProductForm} />
     <Route path="/producto/nuevo" component={ProductForm} />
     <Route path="/example" component={Dasboard} />
+    <Route path="/login" component={Login} />
+
 
   </div>
 </Router>

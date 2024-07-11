@@ -1,4 +1,4 @@
-<header class="p-0">
+<header class="p-0 mx-md-5 ">
 
     <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">

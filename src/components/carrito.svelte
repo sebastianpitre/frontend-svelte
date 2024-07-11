@@ -10,7 +10,7 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close" id="closeModal1">&times;</span>
-      <h4 class="text-warning text-center text-edo">Carrito</h4>
+      <h4 class="text-success text-center text-edo">Carrito</h4>
       <div id="carrito">Carrito vacio</div>
 
       <div class="row text-center mb-n3 mt-3">
@@ -18,7 +18,7 @@
           <button id="borrarCarritoBtn" class="btn btn-sm btn-danger">vaciar carrito</button>
         </div>
         <div class="col-6">
-          <button id="openModal2" class="btn btn-sm btn-warning">Confirmar pedido</button>
+          <button id="openModal2" class="btn btn-sm btn-success">Confirmar pedido</button>
         </div>
       </div>
     </div>

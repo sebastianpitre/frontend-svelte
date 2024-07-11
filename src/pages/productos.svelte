@@ -77,10 +77,9 @@
                 <table class="table align-items-center mb-0">
                     <thead>
                         <tr>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Nombre</th>
+                            <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Nombre</th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Precios y descuentos</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">estado de producto</th>
-                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Employed</th>
+                            <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">estado de producto</th>
                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Acciones</th>
                         </tr>
                     </thead>
@@ -111,23 +110,20 @@
                             <td>
                                 
                                 {#if values.activo === true}
-                                <p class="text-sm mb-0">Estado: <span class="text-success font-weight-bold">Activo</span></p>
+                                <p class="text-sm mb-0 text-center mx-5 bg-success border-radius-2xl text-white font-weight-bold">Activo</p>
                                 {:else}
-                                <p class="text-sm mb-0">Estado: <span class="text-danger font-weight-bold">No activo</span></p>
+                                <p class="text-sm mb-0 text-center mx-5 bg-danger border-radius-2xl text-white font-weight-bold">No activo</p>
                                 {/if}
                                 {#if values.promocion === true}
-                                <p class="text-sm  mb-0">Oferta: <span class="text-success font-weight-bold">En Oferta <span class="text-warning">10%</span></span></p>
+                                <p class="text-sm mt-1 text-center mb-0"><span class="text-success font-weight-bold">En Oferta <span class="text-warning">10%</span></span></p>
                                 {:else}
-                                <p class="text-sm  mb-0">Oferta: <span class="text-danger font-weight-bold">Sin oferta</span></p>
+                                <p class="text-sm mt-1 text-center mb-0"><span class="text-danger font-weight-bold">Sin oferta</span></p>
                                 {/if}
 
                             </td>
 
-                            <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                            </td>
                             <td class="align-middle">
-                                <button class="btn btn-sm btn-outline-danger" on:click={() => eliminarProducto(values.id)}>X</button>
+                                <button class="btn btn-sm btn-outline-danger" on:click={() => eliminarProducto(values.id)}>Eliminar</button>
                                 <a class="btn btn-sm btn-outline-success" href={`/producto/editar/${values.id}`}>Editar</a>
                             </td>
                         </tr>

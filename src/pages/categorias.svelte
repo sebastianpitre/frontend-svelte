@@ -101,7 +101,7 @@
         <div class="col-12 mx-auto">
             <!-- Definimos el formulario -->
             <form on:submit={handleSubmit}>
-                <div class="">
+                <div class="card mb-3">
                     <h3 class="text-center">Formulario de guardar categorias</h3>
                     <div class="row mx-auto pt-3 ">
                         
@@ -126,7 +126,7 @@
                 </div>
             </form>
 
-            <div class="table-responsive">
+            <div class="table-responsive card">
                 <table class="table align-items-center mb-0">
                     <thead>
                         <tr>
