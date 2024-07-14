@@ -108,10 +108,9 @@
   
   <main class="row col-12">
     <Aside />
-    <div class="col-12 col-md-9 pt-3 mb-4 mb-md-0">
-      <div class="col-6 mx-auto">
+    <div class="col-12 col-md-6 mx-auto mt-4 mb-4 mb-md-0">
         <form on:submit={handleSubmit}>
-          <div class="">
+          <div class="card mx-auto p-3">
             <h3 class="text-center">{id ? "Editar Producto" : "Guardar Producto"}</h3>
             <div class="row mx-auto pt-3">
               <div class="col-4">
@@ -230,7 +229,6 @@
             </div>
           </div>
         </form>
-      </div>
     </div>
   </main>
   

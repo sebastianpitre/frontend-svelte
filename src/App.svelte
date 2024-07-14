@@ -9,6 +9,7 @@
   import ProductForm from './pages/ProductForm.svelte';
   import Dasboard from './pages/dasboard.svelte';
   import Login from './pages/login.svelte';
+  import CategoryForm from './pages/CategoryForm.svelte';
 
 
 </script>
@@ -19,13 +20,19 @@
     
     <Route path="/adm" component={Adm} />
 
-    <Route path="/productos" component={Productos}/>
-    <Route path="/categorias" component={Categorias}/>
+    <Route path="/login" component={Login} />
 
+    <Route path="/productos" component={Productos}/>
     <Route path="/producto/editar/:id" component={ProductForm} />
     <Route path="/producto/nuevo" component={ProductForm} />
-    <Route path="/example" component={Dasboard} />
-    <Route path="/login" component={Login} />
+
+
+    <Route path="/categorias" component={Categorias}/>
+    <Route path="/categoria/editar/:id" component={CategoryForm} />
+    <Route path="/categoria/nueva" component={CategoryForm} />
+
+
+    
 
 
   </div>

@@ -101,36 +101,12 @@
 <main class="row col-12 ">
     <Aside />
 
-    <div class="col-12 col-md-9 mx-auto pt-3 mb-4 mb-md-0">
+    <div class="col-12 col-md-6 mx-auto pt-3 mb-4 mb-md-0">
 
-
+        <div class="col-12 text-end">
+            <a href="/categoria/nueva" class="btn btn-sm btn-success">Agregar categoria</a>
+        </div>
         <div class="col-12 mx-auto">
-            <!-- Definimos el formulario -->
-            <form on:submit={handleSubmit}>
-                <div class="card mb-3">
-                    <h3 class="text-center">Formulario de guardar categorias</h3>
-                    <div class="row mx-auto pt-3 ">
-                        
-                        <div class="col-12 col-md-6">
-                            <div class="input-group  input-group-static my-2">
-                                <h6 class="">Nombre de la categoria</h6>
-                                <input type="text" class="form-control mt-n3" bind:value={nombre} />
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-6">
-                            <div class="input-group  input-group-static my-2">
-                                <h6 class="">Link Icono</h6>
-                                <input type="text" class="form-control mt-n3" bind:value={icon} />
-                            </div>
-                        </div>
-
-                        <div class="col-12 text-center">
-                            <button class="btn btn-success " type="submit">Guardar</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
 
             <div class="table-responsive card">
                 <table class="table align-items-center mb-0">
@@ -140,10 +116,7 @@
                                 Nombres</th>
                             
                             <th
-                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                fechas</th>
-                            <th
-                                class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 acciones</th>
                             <th class="text-secondary opacity-7"></th>
                         </tr>
@@ -161,11 +134,10 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="align-middle text-center">
-                                <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
-                            </td>
                             <td class="align-middle">
-                                <button class="btn btn-sm btn-danger" on:click={() => eliminarCategoria(values.id)}>X</button>
+                                <a class="btn btn-sm btn-outline-success" href={`/categoria/editar/${values.id}`}>Editar</a>
+                                <button class="btn btn-sm btn-outline-danger" on:click={() => eliminarCategoria(values.id)}>Eliminar</button>
+                                
                             </td>
                         </tr>
                         {/each}

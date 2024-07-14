@@ -5,48 +5,22 @@
   
     export let id;
   
-    let sku = "";
     let nombre = "";
-    let descripcion = "";
-    let urlImagen = "";
-    let urlFichaTecnica = "";
-    let unidadProducto = "";
-    let cantidad = 0;
-    let precio = 0.0;
-    let promocion = false;
-    let stock = 0;
-    let activo = true;
-    let idCategoria = 0;
-    let idUsuario = 0;
+    let icon = "";
   
     let listCategorias = [];
-    let listUndMedida = [];
   
     onMount(async () => {
       fetch("http://localhost:8080/categorias")
         .then((response) => response.json())
         .then((results) => (listCategorias = results));
   
-      fetch("http://localhost:8080/unidadMedida")
-        .then((response) => response.json())
-        .then((results) => (listUndMedida = results));
-  
       if (id) {
-        const response = await fetch(`http://localhost:8080/productos/${id}`);
+        const response = await fetch(`http://localhost:8080/categorias/${id}`);
         const product = await response.json();
-        sku = product.sku;
         nombre = product.nombre;
-        descripcion = product.descripcion;
-        urlImagen = product.urlImagen;
-        urlFichaTecnica = product.urlFichaTecnica;
-        unidadProducto = product.unidadProducto;
-        cantidad = product.cantidad;
-        precio = product.precio;
-        promocion = product.promocion;
-        stock = product.stock;
-        activo = product.activo;
-        idCategoria = product.idCategoria;
-        idUsuario = product.idUsuario;
+        icon = product.icon;
+
       }
     });
   
@@ -54,24 +28,14 @@
       event.preventDefault();
   
       const formData = {
-        sku,
         nombre,
-        descripcion,
-        urlImagen,
-        urlFichaTecnica,
-        unidadProducto,
-        cantidad,
-        precio,
-        promocion,
-        stock,
-        activo,
-        idCategoria,
-        idUsuario,
+        icon,
+
       };
   
       try {
         const method = id ? "PUT" : "POST";
-        const url = id ? `http://localhost:8080/productos/${id}` : "http://localhost:8080/productos";
+        const url = id ? `http://localhost:8080/categorias/${id}` : "http://localhost:8080/categorias";
   
         const response = await fetch(url, {
           method,
@@ -93,7 +57,7 @@
           showConfirmButton: false,
           timer: 1500
         }).then(() => {
-        window.location.href = '/productos'; // Redirigir a la lista de productos
+        window.location.href = '/categorias'; // Redirigir a la lista de categorias
         });
   
       } catch (error) {
@@ -108,129 +72,35 @@
   
   <main class="row col-12">
     <Aside />
-    <div class="col-12 col-md-9 pt-3 mb-4 mb-md-0">
-      <div class="col-6 mx-auto">
+    <div class="col-12 col-md-6 mx-auto pt-3 mb-4 mb-md-0">
         <form on:submit={handleSubmit}>
-          <div class="">
-            <h3 class="text-center">{id ? "Editar Producto" : "Guardar Producto"}</h3>
+          <div class="card p-3">
+            <h3 class="text-center">{id ? "Editar categoria" : "Guardar categoria"}</h3>
             <div class="row mx-auto pt-3">
-              <div class="col-4">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">SKU</h6>
-                  <input type="text" class="form-control mt-n3" bind:value={sku} />
-                </div>
-              </div>
+              
   
-              <div class="col-8">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">Nombre</h6>
-                  <input type="text" class="form-control mt-n3" bind:value={nombre} />
+              <div class="col-12 col-md-6">
+                <div class="input-group  input-group-static my-2">
+                    <h6 class="">Nombre de la categoria</h6>
+                    <input type="text" class="form-control mt-n3" bind:value={nombre} />
                 </div>
-              </div>
-  
-              <div class="col-12">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">Descripción</h6>
-                  <input type="text" class="form-control mt-n3" bind:value={descripcion} />
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="input-group  input-group-static my-2">
+                    <h6 class="">Link Icono</h6>
+                    <input type="text" class="form-control mt-n3" bind:value={icon} />
                 </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">URL Imagen</h6>
-                  <input type="text" class="form-control mt-n3" bind:value={urlImagen} />
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">URL Ficha Técnica</h6>
-                  <input type="text" class="form-control mt-n3" bind:value={urlFichaTecnica} />
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">Unidad Producto</h6>
-                  <select class="form-select form-select-lg form-control mt-n4" bind:value={unidadProducto}>
-                    {#each listUndMedida as item}
-                      <option value={item.nombre}>{item.nombre}</option>
-                    {/each}
-                  </select>
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">Cantidad</h6>
-                  <input type="number" class="form-control mt-n3" bind:value={cantidad} />
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">Precio</h6>
-                  <input type="number" class="form-control mt-n3" step="1000" bind:value={precio} />
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">Stock</h6>
-                  <input type="number" class="form-control mt-n3" bind:value={stock} />
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-auto"><h6 class="mt-2">Activo</h6></div>
-                  <div class="col">
-                    <div class="toggle-switch">
-                      <input class="toggle-input" id="toggle2" type="checkbox" bind:checked={activo} />
-                      <label class="toggle-label" for="toggle2"></label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="row">
-                  <div class="col-auto"><h6 class="mt-2">Promoción</h6></div>
-                  <div class="col">
-                    <div class="toggle-switch">
-                      <input class="toggle-input" id="toggle" type="checkbox" bind:checked={promocion} />
-                      <label class="toggle-label" for="toggle"></label>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">ID Categoría</h6>
-                  <select class="form-select form-select-lg form-control mt-n4" bind:value={idCategoria}>
-                    {#each listCategorias as item}
-                      <option value={item.id}>{item.nombre}</option>
-                    {/each}
-                  </select>
-                </div>
-              </div>
-  
-              <div class="col-6">
-                <div class="input-group input-group-static my-2">
-                  <h6 class="">ID Usuario</h6>
-                  <input type="number" class="form-control mt-n3" bind:value={idUsuario} />
-                </div>
-              </div>
+            </div>
+
   
               <div class="col-12 text-center">
-                <a href="/productos" class="btn btn-danger">Cancelar</a>
+                <a href="/categorias" class="btn btn-danger">Cancelar</a>
                 <button class="btn btn-success" type="submit">Guardar</button>
               </div>
             </div>
           </div>
         </form>
-      </div>
     </div>
   </main>
   
