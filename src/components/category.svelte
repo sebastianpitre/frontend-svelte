@@ -64,8 +64,9 @@
 }
 
 ._1uCty:hover {
-    background: black;
-    color: white;
+    box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, 0.2);
+    color:#151515;
+    font-weight: bold;
 }
 ._1uCty._18olZ {
     border-color: #151515;

@@ -1,13 +1,13 @@
 
-<div class="position-sticky mobile-menu z-index-sticky top-0 mb-6">
+<div class="position-sticky mobile-menu z-index-sticky top-0 ">
   <div class="row">
     <div class="col-12">
-      <nav class="navbar navbar-expand-lg bg-white top-0 z-index-fixed shadow position-absolute py-2 start-0 end-0">
+      <nav class="navbar navbar-expand-lg bg-white top-0 z-index-fixed shadow opacity-9 position-absolute py-0 start-0 end-0">
         <div class="container-fluid px-0">
           <a class="col-9 col-sm-7 col-md-5 col-lg-4 col-xl-4 col-xxl-3 font-weight-bolder " href="/" rel="tooltip" data-placement="bottom">
             <div class="row">
               <div class="col-3 text-end">
-                <img class="avatar" src="/img/logo.png" alt="imglogo">
+                <img class="avatar-sm my-2" src="/img/logo.png" alt="imglogo">
               </div>
               <p class="col-9 text-dark my-auto font-weight-bold">SENA EMPRESA VITRINA WEB</p>
             </div>

@@ -61,7 +61,7 @@
       <div class="colored-shadow" style="background-image: url(&quot;{producto.urlImagen}&quot;);"></div>
     </div>
     <div class="px-2 py-0">
-      <p class="text-dark text-center text-capitalize font-weight-bold mt-1 mb-0">{producto.nombre}</p>
+      <p class="text-dark text-center text-capitalize mt-1 mb-0">{producto.nombre}</p>
 
       {#if producto.promocion === true && producto.activo === true} 
         <div class="text-warning text-center border-bottom border-gray mt-1 mb-0">
@@ -102,7 +102,8 @@
 
     /* Efecto hover */
     .img:hover {
-      transform: scale(1) translateY(-5px); /* Escala y mueve el botón */
+      border: 3px solid rgba(255, 255, 255, 0);
+      
     }
   
   

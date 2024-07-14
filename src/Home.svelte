@@ -59,10 +59,10 @@
 
     <div class="row mt-1">
       <div class="row">
-        <div class="col-auto">
-          <img class="icon-xs opacity-9 mb-n2" src="/img/icon/estrella.png" alt="icon-sm ">
-        </div>
-        <p class="col ms-n3 text-2xl text-dark">Ofertas</p>
+        <!-- <div class="col-auto">
+          <img class="icon-xs opacity-9 mb-n2" src="/img/icon/estrella.png" alt="- x -">
+        </div> -->
+        <h6 class="col ms-n3 ps-4 text-dark">⭐ Ofertas</h6>
       </div>
         {#each listProductos as producto}
           {#if producto.activo === true  && producto.promocion === true}
@@ -79,9 +79,9 @@
         <div class="col-md-12 col-lg-12">
           <div class="row">
             <div class="col-auto">
-              <img class="icon-xs opacity-9 mb-n2" src="{categoria.icon}" alt="icon-sm ">
+              <img class="icon-xs opacity-9 mt-n2" src="{categoria.icon}" alt="- x -">
             </div>
-            <p class="col ms-n3 text-2xl text-dark">{categoria.nombre}</p>
+            <h6 class="col ms-n3 text-dark">{categoria.nombre}</h6>
           </div>
           
           

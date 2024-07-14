@@ -50,52 +50,58 @@
 
     // eliminar Categorias
 
-    async function eliminarCategoria(id) {
-        try {
-        const response = await fetch(`http://localhost:8080/categorias/${id}`, {
-            method: 'DELETE',
+   async function eliminarCategoria(id) {
+    try {
+        const result = await Swal.fire({
+            
+            title: '¿Estás seguro?',
+            text: 'Esta acción no se puede deshacer',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Sí, eliminar'
         });
 
-        if (response.ok) {
-            listCategorias = listCategorias.filter(values => values.id !== id);
-        } else {
-            console.error('Error al eliminar categoria:', response.statusText);
+        if (result.isConfirmed) {
+            const response = await fetch(`http://localhost:8080/categorias/${id}`, {
+                method: 'DELETE',
+            });
+
+            if (response.ok) {
+                // Actualizar la lista de categoria después de la eliminación
+                listCategorias = listCategorias.filter(producto => producto.id !== id);
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: '¡Eliminado!',
+                    text: 'La categoria ha sido eliminada.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                Swal.fire(
+                    'Error',
+                    `Hubo un problema al eliminar la categoria: ${response.statusText}`,
+                    'error'
+                );
+            }
         }
-        } catch (error) {
-        console.error('Error al eliminar categoria:', error);
-        }
+    } catch (error) {
+        Swal.fire(
+            'Error',
+            `Hubo un problema al eliminar la categoria: ${error}`,
+            'error'
+        );
     }
+}
 
-    
-
-    async function verCategoria(id) {
-        Swal.fire({
-        title: nombre,
-
-        html: `
-            You can use <b>bold text</b>,
-            <a href="#" autofocus>links</a>,
-            and other HTML tags
-        `,
-        showCloseButton: true,
-        showCancelButton: true,
-        focusConfirm: false,
-        confirmButtonText: `
-            <i class="fa fa-thumbs-up"></i> Great!
-        `,
-        confirmButtonAriaLabel: "Thumbs up, great!",
-        cancelButtonText: `
-            <i class="fa fa-thumbs-down"></i>
-        `,
-        cancelButtonAriaLabel: "Thumbs down"
-        });
-    }
 </script>
 
 <main class="row col-12 ">
     <Aside />
 
-    <div class="col-12 col-md-9 pt-3 mb-4 mb-md-0">
+    <div class="col-12 col-md-9 mx-auto pt-3 mb-4 mb-md-0">
 
 
         <div class="col-12 mx-auto">
@@ -160,7 +166,6 @@
                             </td>
                             <td class="align-middle">
                                 <button class="btn btn-sm btn-danger" on:click={() => eliminarCategoria(values.id)}>X</button>
-                                <button class="btn btn-sm btn-success" on:click={() => verCategoria(values.id)}>ver</button>
                             </td>
                         </tr>
                         {/each}
