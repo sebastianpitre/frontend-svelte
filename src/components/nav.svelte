@@ -42,7 +42,7 @@
 
 <style>
   nav{
-    background-color: #ffffffc5;
+    background-color: #ffffffea;
   }
 
 </style>

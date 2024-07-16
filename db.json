@@ -78,9 +78,9 @@
       "cantidad": 1,
       "precio": 5000,
       "promocion": true,
-      "descuento": 22,
+      "descuento": 100,
       "stock": 39,
-      "activo": false,
+      "activo": true,
       "idCategoria": "4",
       "idUsuario": 1,
       "id": "8346"

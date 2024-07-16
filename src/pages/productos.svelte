@@ -64,7 +64,7 @@
 </script>
 
 
-<main class="row col-12 ">
+<main>
     <Aside />
 
     <div class="col-12 col-md-9 mx-auto mb-4 mb-md-0">
