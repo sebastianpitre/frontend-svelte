@@ -1,9 +1,41 @@
 <script>
   import Swal from "sweetalert2";
-    export let producto;
+  export let producto;
     let noDisponible = producto.activo === false;
     let fotoNoDisponible = producto.urlImagen === "";
 
+    import { onMount } from "svelte";
+
+    // carrito
+
+    import { getContext } from 'svelte';
+    import { cart, incrementQuantity, decrementQuantity } from '../stores/cart';
+
+    export let addToCart; // Propiedad para recibir la función addToCart desde Home.svelte
+
+    let isInCart = false;
+    let itemQuantity = 0;
+
+    // Suscripción a la tienda del carrito para reactividad
+    $: {
+      const cartItems = $cart;
+      const item = cartItems.find(item => item.id === producto.id);
+      isInCart = !!item;
+      itemQuantity = item ? item.quantity : 0;
+    }
+
+    // Verificar si el producto está en el carrito al montar el componente
+    onMount(() => {
+      const cartItems = $cart;
+      const item = cartItems.find(item => item.id === producto.id);
+      isInCart = !!item;
+      itemQuantity = item ? item.quantity : 0;
+    });
+
+    // Función para agregar al carrito usando la función addToCart de Home.svelte
+    function handleAddToCart() {
+      addToCart(producto);
+    }
 
     // alerta de ver producto
 
@@ -20,17 +52,10 @@
                 <div class="col-12 text-start col-lg-12 col-xl-7 col-xxl-7">
                   <h5>${producto.nombre}</h5> 
                   <p>${producto.descripcion}</p>
-                  <p>Este producto es vendido, facturado y entregado por:</p>
-                  <span>SENA - CBC</span>
+                  <p>Este producto es vendido, facturado y entregado por SENA - CBC</p>
                   <p class="text-success">$ ${producto.precio}</p>
                   <div class="row text-center mt-2">
-                    
-              
-                    <div class="col-md-6 col-6">
-                      <div class="btn col-12  btn-sm btn-outline-success pb-0 py-1 px-2">
-                        <span class="material-symbols-outlined">shopping_cart</span>+
-                      </div>
-                    </div>
+                  
                   </div>
                 </div>
             `,
@@ -43,20 +68,20 @@
   
   <div class="card border bg-gray {noDisponible ? 'bg-gray-200 ' : ''} position-relative">
     {#if producto.promocion === true && producto.activo === true}
-        <span class="bg-warning col-6 text-white text-bold text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
+        <span class="bg-warning col-8 col-sm-6 text-white text-bold text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
         Oferta {producto.descuento}%
         </span>
     {/if}
 
     {#if producto.activo === false}
-        <span class="bg-gray-600 col-6 text-white text-bold text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
+        <span class="bg-gray-600 col-7 col-sm-6 text-white text-bold text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
         Agotado
         </span>
     {/if}
   
     <div class="card-header p-0 position-relative z-index-2" style="border-radius: 0.75rem 0.75rem 0px 0px">
       <div class="d-block blur-shadow-image cursor-pointer img-marco" >
-        <img src="{fotoNoDisponible ? '/img/logo.png' : producto.urlImagen}" width="100%" height="160vh" alt="producto" class="shadow img" style="border-radius: 0.75rem 0.75rem 0px 0px" on:click={mostrarAlertaVisibilidad}>
+        <img src="{fotoNoDisponible ? '/img/logo.png' : producto.urlImagen}" width="100%" height="160vh" alt="producto" class="shadow img-size {producto.promocion ? 'img-oferta' : 'img'} {producto.activo ? '' : 'img-no-activo'}" style="border-radius: 0.75rem 0.75rem 0px 0px" on:click={mostrarAlertaVisibilidad}>
       </div>
       <div class="colored-shadow" style="background-image: url(&quot;{producto.urlImagen}&quot;);"></div>
     </div>
@@ -76,9 +101,17 @@
       <div class="row text-center mt-2">
   
         <div class="col-md-10 col-12 mx-auto ">
-          <div class="btn col-12  btn-sm {noDisponible ? 'disabled' : 'btn-outline-success'}">
-            <span class="my-auto">agregar</span>
-          </div>
+
+          {#if isInCart}
+            <div>
+              <button class="btn col btn-sm btn-blue" on:click={() => decrementQuantity(producto.id)}>-</button>
+              <span class="col p-1 btn disabled text-dark">{itemQuantity} {producto.unidadProducto}</span>
+              <button class="btn col btn-sm btn-success" on:click={() => incrementQuantity(producto.id)}>+</button>
+            </div>
+          {/if}
+          {#if !isInCart}
+            <button class="btn col-12  btn-sm {noDisponible ? 'disabled' : 'btn-success'}" on:click={handleAddToCart}>Agregar </button>
+          {/if}
         </div>
       </div>
     </div>
@@ -86,7 +119,7 @@
   
   <style>
   @media (max-width: 768px) {
-    .img {
+    .img-size {
       height: 140px;
     }
     .img-marco{
@@ -94,18 +127,24 @@
     }
   }
 
-  .img {
-      
+  .img, .img-oferta {
       transition: transform 0.3s ease, background-color 0.3s ease;
       cursor: pointer;
     }
 
     /* Efecto hover */
     .img:hover {
-      border: 3px solid rgba(255, 255, 255, 0);
+      border: 3px solid white;
       
     }
-  
+    .img-oferta:hover {
+      border: 3px solid #fb8c00;
+      
+    }
+
+    .img-no-activo:hover{
+      border: 3px solid #6c757d;
+    }
   
   </style>
   

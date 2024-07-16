@@ -101,7 +101,7 @@
                             <td>
                                 <p class="text-sm mb-0">Precio: <span class="text-success font-weight-bold">$ {values.precio}  </span>{values.unidadProducto}</p>
                                 {#if values.promocion === true}
-                                <p class="text-sm mb-0">Precio con oferta: <span class="text-warning font-weight-bold">{values.precio-values.precio*10/100}</span> {values.unidadProducto}</p>
+                                <p class="text-sm mb-0">Precio con oferta: <span class="text-warning font-weight-bold">{values.precio-values.precio*values.descuento/100}</span> {values.unidadProducto}</p>
                                 {/if}
                                 
 
@@ -115,7 +115,7 @@
                                 <p class="text-sm mb-0 text-center mx-5 bg-danger border-radius-2xl text-white font-weight-bold">No activo</p>
                                 {/if}
                                 {#if values.promocion === true}
-                                <p class="text-sm mt-1 text-center mb-0"><span class="text-success font-weight-bold">En Oferta <span class="text-warning">10%</span></span></p>
+                                <p class="text-sm mt-1 text-center mb-0"><span class="text-success font-weight-bold">En Oferta <span class="text-warning">{values.descuento}%</span></span></p>
                                 {:else}
                                 <p class="text-sm mt-1 text-center mb-0"><span class="text-danger font-weight-bold">Sin oferta</span></p>
                                 {/if}

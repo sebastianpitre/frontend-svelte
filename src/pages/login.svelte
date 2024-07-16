@@ -1,11 +1,11 @@
-<section>
+<section style="background-image: radial-gradient(circle at 20% 95%, #056877, #051828 96%);">
     <div class="page-header min-vh-75">
         <div class="container">
             <div class="row">
                 <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
                     <div class="card z-index-0 mt-7">
                         <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
-                            <div class="bg-gradient-info shadow-info border-radius-lg py-3 pe-1 text-center py-4">
+                            <div class="bg-gradient-success shadow-success border-radius-lg py-3 pe-1 text-center py-4">
                                 <h4 class="font-weight-bolder text-white mt-1 mb-0">Sign In</h4>
                                 <p class="mb-1 text-sm text-white">Welcome back</p>
                             </div>
@@ -25,7 +25,7 @@
                                     <label class="form-check-label my-auto ms-2" for="rememberMe">Remember me</label>
                                 </div>
                                 <div class="text-center">
-                                    <a href="/productos" class="btn bg-gradient-info w-100 mt-4 mb-2">Sign in</a>
+                                    <a href="/productos" class="btn bg-gradient-success w-100 mt-4 mb-2">Sign in</a>
                                 </div>
                             </form>
                         </div>
@@ -99,7 +99,7 @@
                             </div>
                             <p class="mb-0 mt-3 text-sm mx-auto">
                                 Don't have an account?
-                                <a href="javascript:;" class="text-info text-gradient font-weight-bold">Sign up</a>
+                                <a href="javascript:;" class="text-success text-gradient font-weight-bold">Sign up</a>
                             </p>
                         </div>
                     </div>

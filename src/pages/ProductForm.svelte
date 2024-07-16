@@ -14,6 +14,7 @@
     let cantidad = 0;
     let precio = 0.0;
     let promocion = false;
+    let descuento = 0;
     let stock = 0;
     let activo = true;
     let idCategoria = 0;
@@ -43,6 +44,7 @@
         cantidad = product.cantidad;
         precio = product.precio;
         promocion = product.promocion;
+        descuento = product.descuento;
         stock = product.stock;
         activo = product.activo;
         idCategoria = product.idCategoria;
@@ -63,6 +65,7 @@
         cantidad,
         precio,
         promocion,
+        descuento,
         stock,
         activo,
         idCategoria,
@@ -192,7 +195,7 @@
                 </div>
               </div>
   
-              <div class="col-6">
+              <div class="col-3">
                 <div class="row">
                   <div class="col-auto"><h6 class="mt-2">Promoción</h6></div>
                   <div class="col">
@@ -201,6 +204,13 @@
                       <label class="toggle-label" for="toggle"></label>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <div class="col-3">
+                <div class="input-group input-group-static my-2">
+                  <h6 class="">% promocion</h6>
+                  <input type="number" class="form-control mt-n3" bind:value={descuento} />
                 </div>
               </div>
   

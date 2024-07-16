@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/material-kit.css';
+import './material-kit.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import App from './App.svelte'
 

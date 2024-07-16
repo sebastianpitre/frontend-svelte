@@ -98,7 +98,7 @@
 
 </script>
 
-<main class="row col-12 ">
+<main>
     <Aside />
 
     <div class="col-12 col-md-6 mx-auto pt-3 mb-4 mb-md-0">
