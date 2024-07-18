@@ -69,7 +69,7 @@
 
     <div class="col-12 col-md-9 mx-auto mb-4 mb-md-0">
         
-        <div class="col-12 mt-3 text-end">
+        <div class="col-12 mt-6 text-end">
             <a href="/producto/nuevo" class="btn btn-sm btn-success">Agregar producto</a>
         </div>
         <div class="card">

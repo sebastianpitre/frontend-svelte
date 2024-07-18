@@ -22,7 +22,7 @@
       {#each listCategorias as values}
         <li class="_2X7zW">
           <a class="_1uCty { $selectedCategory === values.nombre ? 'selected' : '' }" href="/estilos/{values.nombre}/" on:click|preventDefault={() => selectCategory(values.nombre)}>
-            <!-- <img class="icon opacity-9 bg-white" src="{values.icon}" alt="icon" width="11%"> -->
+            <img class="icon opacity-9 bg-white" src="{values.icon}" alt="icon" width="11%">
             <span class="ms-2 me-3 me-xl-0">{values.nombre}</span>
           </a>
         </li>

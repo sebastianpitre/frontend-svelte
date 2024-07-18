@@ -14,10 +14,10 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <span class="close text-center card bg-danger text-white col-1" id="closeModal1">&times;</span>
-      <h4 class="text-success text-center text-edo">Carrito</h4>
+      <h3 class="text-dark text-center text-edo">Carrito</h3>
       <Carrito/>
 
-      <div class="row text-center mb-n3 mt-3">
+      <div class="row text-center">
         <div class="col-6">
           <button id="borrarCarritoBtn" class="btn btn-sm btn-danger">vaciar carrito</button>
         </div>

@@ -9,7 +9,7 @@
               <div class="col-3 text-end">
                 <img class="avatar-sm my-2" src="/img/logo.png" alt="imglogo">
               </div>
-              <p class="col-9 text-dark my-auto font-weight-bold">SENA Vitrina web</p>
+              <p class="col-9 text-dark my-auto font-weight-bold">SENA Empresa vitrina web</p>
             </div>
             
           </a>
