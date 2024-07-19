@@ -1,3 +1,32 @@
+<script>
+    localStorage.setItem('usuario','usuario')
+    localStorage.setItem('contraseña','contraseña')
+
+    let username ='';
+    let password ='';
+    let errorMensaje ='';
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const obtenerUsuario = localStorage.getItem('usuario');
+        const obtenerConstraseña = localStorage.getItem('contraseña');
+
+        if(username === obtenerUsuario && password === obtenerConstraseña){
+            errorMensaje = 'login exitoso';
+            window.location.href = '/productos';
+        } else{
+            errorMensaje = 'olvidaste tu contraseña?';
+        }
+    };
+
+</script>
+
+<style>
+    .errorMensaje{
+        color: red;
+    }
+</style>
+
 <section style="background-image: radial-gradient(circle at 20% 95%, #056877, #051828 96%);">
     <div class="page-header min-vh-100">
         <div class="container">
@@ -11,22 +40,26 @@
                             </div>
                         </div>
                         <div class="card-body pb-0">
-                            <form>
+                            <form on:submit={handleSubmit}>
+                                <label for="username" class="form-label">Email</label>
                                 <div class="input-group input-group-outline mb-3">
-                                    <label class="form-label">Email</label>
-                                    <input type="email" class="form-control">
+                                    <input type="text" id="username" class="form-control" bind:value={username} required>
                                 </div>
+                                <label for="password" class="form-label">Password</label>
                                 <div class="input-group input-group-outline mb-4">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control">
+                                    <input type="text" id="password" class="form-control" bind:value={password} required>
                                 </div>
                                 <div class="form-check form-switch d-flex align-items-center">
                                     <input class="form-check-input" type="checkbox" id="rememberMe">
                                     <label class="form-check-label my-auto ms-2" for="rememberMe">Remember me</label>
                                 </div>
                                 <div class="text-center">
-                                    <a href="/productos" class="btn bg-gradient-success w-100 mt-4 mb-2">Sign in</a>
+                                    <button class="btn btn-success" type="submit">iniciar</button>    
                                 </div>
+
+                                {#if errorMensaje}
+                                    <p class="errorMensaje text-center">{errorMensaje}</p>
+                                {/if}
                             </form>
                         </div>
                         <div class="card-footer text-center pt-0 px-sm-4 px-1">

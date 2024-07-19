@@ -52,6 +52,7 @@
 
   import { cart, addToCart, incrementQuantity, decrementQuantity } from './stores/cart';
   import Footer from './components/footer.svelte';
+  import Slider from './components/slider.svelte';
 
   let listProductos = []; // Aquí obtienes tu lista de productos
 

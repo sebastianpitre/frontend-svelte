@@ -3,6 +3,7 @@
     import Aside from '../components/Aside.svelte';
 
     import Swal from 'sweetalert2';
+  import Footer from '../components/footer.svelte';
 
     // Definimos las variables reactivas para el estado del formulario
     let id;
@@ -150,6 +151,7 @@
         </div>
 
     </div>
+    <Footer/>
 </main>
 
 <style>

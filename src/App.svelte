@@ -4,7 +4,6 @@
   import { Router, Route, Link, link } from 'svelte-routing';
 
   import Home from './Home.svelte';
-  import Adm from './components/adm.svelte';
   import Categorias from './pages/categorias.svelte';
   import ProductForm from './pages/ProductForm.svelte';
   import Dasboard from './pages/dasboard.svelte';
@@ -18,8 +17,6 @@
   <div>
     <Route path="/" component={Home} />
     
-    <Route path="/adm" component={Adm} />
-
     <Route path="/login" component={Login} />
 
     <Route path="/productos" component={Productos}/>

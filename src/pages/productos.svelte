@@ -1,4 +1,5 @@
 <script>
+	import Footer from './../components/footer.svelte';
     import { onMount } from 'svelte';
     import Aside from '../components/Aside.svelte';
     import Swal from "sweetalert2";
@@ -104,7 +105,6 @@
                                 <p class="text-sm mb-0">Precio con oferta: <span class="text-warning font-weight-bold">{values.precio-values.precio*values.descuento/100}</span> {values.unidadProducto}</p>
                                 {/if}
                                 
-
                             </td>
 
                             <td>
@@ -134,6 +134,8 @@
             </div>
         </div>
     </div>
+
+    <Footer/>
 </main>
 
 <style>
