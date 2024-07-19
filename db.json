@@ -10,7 +10,7 @@
       "cantidad": 1,
       "precio": 2000,
       "promocion": true,
-      "descuento": 100,
+      "descuento": 10,
       "stock": 12,
       "activo": true,
       "idCategoria": "4",
