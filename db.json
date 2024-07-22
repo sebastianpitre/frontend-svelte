@@ -97,12 +97,11 @@
       "unidadProducto": "KG",
       "cantidad": 1,
       "precio": 15000,
-      "promocion": false,
+      "promocion": true,
       "descuento": 5,
       "stock": 45,
       "activo": true,
       "idCategoria": "1",
-      "fechaModificacion": "2024-07-19T12:00:00Z",
       "idUsuario": 1,
       "id": "19d2"
     },
@@ -125,7 +124,6 @@
       "idUsuario": 1
     },
     {
-      "id": "d34b",
       "sku": "Pollo",
       "nombre": "Pollo",
       "descripcion": "Pollo",
@@ -134,13 +132,13 @@
       "unidadProducto": "KG",
       "cantidad": 1,
       "precio": 13000,
-      "promocion": false,
-      "descuento": 0,
+      "promocion": true,
+      "descuento": 11,
       "stock": 27,
       "activo": true,
       "idCategoria": "1",
-      "fechaModificacion": "2024-07-19T12:00:00Z",
-      "idUsuario": 1
+      "idUsuario": 1,
+      "id": "d34b"
     },
     {
       "sku": "Tilapiaoja",

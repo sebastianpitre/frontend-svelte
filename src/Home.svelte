@@ -10,7 +10,7 @@
   let categorias = [];
 
   // Accesos rápidos
-  let clasesCard = "col-6 col-sm-4 col-md-4 col-lg-4 col-xl-3 col-xxl-2 mb-4 px-2";
+  let clasesCard = "col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2 mb-4 px-2";
 
   // Llamar a la API
   onMount(async () => {
@@ -97,7 +97,7 @@
           <h5 class="text-dark">Ofertas</h5>
         </div>
         {#each productosEnPromocion as producto (producto.id)}
-          <div class="col-6 col-sm-4 col-md-4 col-lg-4 col-xl-3 col-xxl-2 mb-4 px-2">
+          <div class="{clasesCard}">
             <Card {producto} addToCart={handleAddToCart}/>
           </div>
         {/each}

@@ -67,6 +67,7 @@
   </script>
   
   <div class="card border bg-gray {noDisponible ? 'bg-gray-200 ' : ''} position-relative">
+    
     {#if producto.promocion === true && producto.activo === true}
         <span class="bg-warning col-8 col-sm-6 text-white text-bold text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
         Oferta {producto.descuento}%
@@ -78,11 +79,18 @@
         Agotado
         </span>
     {/if}
-  
+
+    
     <div class="card-header p-0 position-relative z-index-2" style="border-radius: 0.75rem 0.75rem 0px 0px">
       <div class="d-block blur-shadow-image cursor-pointer img-marco" >
         <img src="{fotoNoDisponible ? '/img/logo.png' : producto.urlImagen}" width="100%" height="160vh" alt="producto" class="shadow img-size {producto.promocion ? 'img-oferta' : 'img'} {producto.activo ? '' : 'img-no-activo'}" style="border-radius: 0.75rem 0.75rem 0px 0px" on:click={mostrarAlertaVisibilidad}>
       </div>
+      {#if producto.promocion === true && producto.activo === true}
+        <div class="blur opacity-9 col-8 col-sm-6 text-dark text-center position-absolute" style="z-index: 3; border-radius: 7px 0px 0px 0px; bottom: 1px; right: 1px; height: 20px; font-size: 15px;">
+          <span class="material-symbols-outlined" style="font-size: 15px;">schedule</span> 2 dias 13h
+        </div>
+      {/if}
+      
       <div class="colored-shadow" style="background-image: url(&quot;{producto.urlImagen}&quot;);"></div>
     </div>
     <div class="px-2 py-0">
@@ -92,58 +100,68 @@
         <div class="text-warning text-center border-bottom border-gray mt-1 mb-0">
           <del class="text-underline text-start text-dark opacity-9 " style="font-size: 12px;left: 14px;" >$ {producto.precio}</del>
           ${producto.precio-producto.precio*producto.descuento/100} 
-          <span class="text-dark text-sm text-lowercase">{producto.unidadProducto}</span>
+          <span class="text-dark text-sm">{producto.unidadProducto}</span>
         </div>
         {:else}
-        <p class="text-success text-center border-bottom border-gray mt-1 mb-0">$ {producto.precio} <span class="text-dark text-sm text-lowercase">{producto.unidadProducto}</span></p>
+        <p class="text-success text-center border-bottom border-gray mt-1 mb-0">$ {producto.precio} <span class="text-dark text-sm">{producto.unidadProducto}</span></p>
       {/if}
   
       <div class="row text-center mt-2">
   
-        <div class="col-md-10 col-12 mx-auto ">
+        <div class="col-md-10 col-12 mx-auto">
 
-          {#if isInCart}
-            <div>
-              <button class="btn col btn-sm btn-blue" on:click={() => decrementQuantity(producto.id)}>-</button>
-              <span class="col p-1 btn disabled text-dark">{itemQuantity} {producto.unidadProducto}</span>
-              <button class="btn col btn-sm btn-success" on:click={() => incrementQuantity(producto.id)}>+</button>
-            </div>
+          {#if producto.activo === true}
+
+            {#if isInCart}
+              <div>
+                <button class="btn col btn-sm btn-blue" on:click={() => decrementQuantity(producto.id)}>-</button>
+                <span class="col p-1 btn disabled text-dark">{itemQuantity} {producto.unidadProducto}</span>
+                <button class="btn col btn-sm btn-success" on:click={() => incrementQuantity(producto.id)}>+</button>
+              </div>
+            {/if}
+            {#if !isInCart}
+              <button class="btn col-12 btn-sm btn-success" on:click={handleAddToCart}>Agregar </button>
+            {/if}
+
+            {:else} <button class="btn col-12 btn-sm bg-info text-white disabled">No disponible</button>
           {/if}
-          {#if !isInCart}
-            <button class="btn col-12  btn-sm {noDisponible ? 'disabled' : 'btn-success'}" on:click={handleAddToCart}>Agregar </button>
-          {/if}
+
+          
         </div>
       </div>
     </div>
   </div>
   
   <style>
-  @media (max-width: 768px) {
-    .img-size {
-      height: 140px;
+    @media (max-width: 768px) {
+      .img-size {
+        height: 140px;
+      }
+      .img-marco{
+        height: 140px;
+      }
     }
-    .img-marco{
-      height: 140px;
-    }
-  }
 
-  .img, .img-oferta {
+    .img, .img-oferta {
       transition: transform 0.3s ease, background-color 0.3s ease;
       cursor: pointer;
     }
 
     /* Efecto hover */
     .img:hover {
-      border: 3px solid white;
+      border: 2px solid white;
+      border-bottom: 1px solid white;
       
     }
     .img-oferta:hover {
-      border: 3px solid #fb8c00;
-      
+      border: 2px solid #fb8c00;
+      border-bottom: 1px solid #fb8c00;
     }
 
     .img-no-activo:hover{
-      border: 3px solid #6c757d;
+      border: 2px solid #6c757d;
+      border-bottom: 1px solid #6c757d;
+
     }
   
   </style>
