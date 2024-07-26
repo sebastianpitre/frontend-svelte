@@ -1,9 +1,9 @@
 <script>
     import { onMount } from 'svelte';
-    import Aside from '../components/Aside.svelte';
 
     import Swal from 'sweetalert2';
   import Footer from '../components/footer.svelte';
+  import Nav from '../components/nav.svelte';
 
     // Definimos las variables reactivas para el estado del formulario
     let id;
@@ -100,9 +100,9 @@
 </script>
 
 <main>
-    <Aside />
+    <Nav />
 
-    <div class="col-12 col-md-6 mx-auto pt-3 mb-4 mb-md-0">
+    <div class="col-12 col-md-6 mx-auto mt-5 pt-3 mb-4 mb-md-0">
 
         <div class="col-12 text-end">
             <a href="/categoria/nueva" class="btn btn-sm btn-success">Agregar categoria</a>

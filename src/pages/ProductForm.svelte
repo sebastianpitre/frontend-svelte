@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import Aside from "../components/Aside.svelte";
     import Swal from "sweetalert2";
+    import Nav from "../components/nav.svelte";
   
     export let id;
   
@@ -22,11 +22,16 @@
   
     let listCategorias = [];
     let listUndMedida = [];
+    let Usuario = [];
   
     onMount(async () => {
       fetch("http://localhost:8080/categorias")
         .then((response) => response.json())
         .then((results) => (listCategorias = results));
+
+        fetch("http://localhost:8080/usuario")
+        .then((response) => response.json())
+        .then((results) => (Usuario = results));
   
       fetch("http://localhost:8080/unidadMedida")
         .then((response) => response.json())
@@ -110,7 +115,7 @@
   </script>
   
   <main class="row col-12">
-    <Aside />
+    <Nav />
     <div class="col-12 col-md-6 mx-auto mt-4 mb-4 mb-md-0">
         <form on:submit={handleSubmit}>
           <div class="card mx-auto p-3">
@@ -197,7 +202,7 @@
   
               <div class="col-3">
                 <div class="row">
-                  <div class="col-auto"><h6 class="mt-2">Promoción</h6></div>
+                  <div class="col-auto"><h6 class="mt-2">Oferta</h6></div>
                   <div class="col">
                     <div class="toggle-switch">
                       <input class="toggle-input" id="toggle" type="checkbox" bind:checked={promocion} />
@@ -209,7 +214,7 @@
 
               <div class="col-3">
                 <div class="input-group input-group-static my-2">
-                  <h6 class="">% promocion</h6>
+                  <h6 class="">% oferta</h6>
                   <input type="number" class="form-control mt-n3" bind:value={descuento} />
                 </div>
               </div>

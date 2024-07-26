@@ -17,13 +17,13 @@
   <div class="_1LnEC">
     <ul class="_3r4FV mb-0 py-2 mt-1 border-radius-lg">
       <li class="_2X7zW ms-n4">
-        <a class="_1uCty _18olZ { $selectedCategory === 'all' ? 'selected' : '' }" href="/" on:click|preventDefault={() => selectCategory('all')}>Todos</a>
+        <a class="_1uCty _18olZ text-dark { $selectedCategory === 'all' ? 'selected' : '' }" href="/" on:click|preventDefault={() => selectCategory('all')}>Todos</a>
       </li>
       {#each listCategorias as values}
         <li class="_2X7zW">
           <a class="_1uCty { $selectedCategory === values.nombre ? 'selected' : '' }" href="/estilos/{values.nombre}/" on:click|preventDefault={() => selectCategory(values.nombre)}>
             <img class="icon opacity-9 bg-white" src="{values.icon}" alt="icon" width="11%">
-            <span class="ms-2 me-3 me-xl-0">{values.nombre}</span>
+            <span class="ms-2 text-dark me-3 me-xl-0">{values.nombre}</span>
           </a>
         </li>
       {/each}
@@ -80,12 +80,10 @@ li, ul {
 }
 
 .selected {
-    border: 2px solid white;
-    background-color: #04324d !important;
-    color: white;
+    border: 1px groove #151515;
+    
 }
 
-.selected:hover {
-    color: white;
-}
+
+
 </style>

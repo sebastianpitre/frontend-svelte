@@ -1,8 +1,8 @@
 <script>
 	import Footer from './../components/footer.svelte';
     import { onMount } from 'svelte';
-    import Aside from '../components/Aside.svelte';
     import Swal from "sweetalert2";
+    import Nav from '../components/nav.svelte';
 
 
 
@@ -66,7 +66,7 @@
 
 
 <main>
-    <Aside />
+    <Nav/>
 
     <div class="col-12 col-md-9 mx-auto mb-4 mb-md-0">
         

@@ -1,3 +1,9 @@
+<script>
+
+    let currentUser = 'admin';
+
+   
+</script>
 
 <div class="position-sticky mobile-menu z-index-sticky top-0 ">
   <div class="row">
@@ -24,13 +30,131 @@
           <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
             <ul class="navbar-nav navbar-nav-hover ms-auto">
 
-              <li class="nav-item dropdown dropdown-hover my-1 ms-2">
-                <a href="/productos" class="btn btn-sm mb-0">admin</a>
-              </li>
 
-              <li class="nav-item dropdown dropdown-hover my-1 ms-2">
+              {#if currentUser === 'admin'}
+              <li class="nav-item dropdown dropdown-hover ms-2">
+                <a role="button" class=" btn btn-sm btn-outline-dark mb-0" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="icon opacity-9 mt-n1" src="/img/icon/pages.svg" alt="icon" width="20px">
+                  acciones
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                  <div class="d-none d-lg-block">
+                    <ul class="list-group">
+                      
+                      <li class="nav-item list-group-item border-0 p-0">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md" href="/productos">
+                          <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">productos</h6>
+                        </a>
+                      </li>
+                      <li class="nav-item list-group-item border-0 p-0">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md" href="/categorias">
+                          <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">categorias</h6>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="row d-lg-none">
+                    <div class="col-md-12 g-0">
+                      <a class="dropdown-item py-2 ps-3 border-radius-md" href="/productos">
+                        <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">productos</h6>
+                      </a>
+                    </div>
+                    <div class="col-md-12 g-0">
+                      <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                        <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">categorias</h6>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+                {:else}
+                <li class="nav-item dropdown dropdown-hover">
+                  
+                  <div class="btn btn-sm btn-success mb-0" id="openModal1">
+                    <img class="icon opacity-9 mt-n1" src="/img/icon/cart.svg" alt="icon" width="20px">
+                    <span class=" me-xl-0">carrito</span>
+                  </div>
+                </li>
+              {/if}
+
+              {#if currentUser === 'admin'}
+
+              <li class="nav-item dropdown dropdown-hover ms-2">
+                <a role="button" class=" btn btn-sm btn-blue mb-0" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img class="icon opacity-9 mt-n1" src="/img/icon/admin.svg" alt="icon" width="20px">
+                  {currentUser}
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                  <div class="d-none d-lg-block">
+                    <ul class="list-group">
+                      
+                      <li class="nav-item list-group-item border-0 p-0">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md" href="/productos">
+                          <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Administrar</h6>
+                        </a>
+                      </li>
+                      <li class="nav-item list-group-item border-0 p-0">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                          <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">cerrar sesion</h6>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="row d-lg-none">
+                    <div class="col-md-12 g-0">
+                      <a class="dropdown-item py-2 ps-3 border-radius-md" href="/productos">
+                        <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">Administrar</h6>
+                      </a>
+                    </div>
+                    <div class="col-md-12 g-0">
+                      <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                        <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">cerrar sesion</h6>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {:else if currentUser === 'user'}
+                <li class="nav-item dropdown dropdown-hover ms-2">
+                  <a role="button" class=" btn btn-sm btn-blue mb-0" id="dropdownMenuDocs" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img class="icon opacity-9 mt-n1" src="/img/icon/user.svg" alt="icon" width="20px">
+                    {currentUser}
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end dropdown-menu-animation dropdown-md mt-0 mt-lg-3 p-3 border-radius-lg" aria-labelledby="dropdownMenuDocs">
+                    <div class="d-none d-lg-block">
+                      <ul class="list-group">
+                        
+                        <li class="nav-item list-group-item border-0 p-0">
+                          <a class="dropdown-item py-2 ps-3 border-radius-md" href="/perfil">
+                            <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">perfil</h6>
+                          </a>
+                        </li>
+                        <li class="nav-item list-group-item border-0 p-0">
+                          <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                            <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">cerrar sesion</h6>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="row d-lg-none">
+                      <div class="col-md-12 g-0">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md" href="/perfil">
+                          <h6 class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0">perfil</h6>
+                        </a>
+                      </div>
+                      <div class="col-md-12 g-0">
+                        <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                          <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">cerrar sesion</h6>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              {:else}
+              <li class="nav-item dropdown dropdown-hover ms-2">
                 <a href="/login" class="btn btn-sm btn-blue mb-0">Ingresar</a>
               </li>
+              {/if}
               
             </ul>
           </div>

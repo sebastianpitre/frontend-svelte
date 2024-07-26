@@ -1,25 +1,39 @@
 <script>
-    localStorage.setItem('usuario','usuario')
-    localStorage.setItem('contraseña','contraseña')
-
-    let username ='';
-    let password ='';
-    let errorMensaje ='';
-    const handleSubmit = (e) => {
+    import { userLog } from '../stores/login.js'; // Ajusta la ruta según sea necesario
+    let username = '';
+    let password = '';
+    let errorMensaje = '';
+    
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        
+        try {
+            const response = await fetch("http://localhost:8080/usuario");
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const usuarios = await response.json();
+            const usuario = usuarios.find(u => u.username === username && u.password === password);
 
-        const obtenerUsuario = localStorage.getItem('usuario');
-        const obtenerConstraseña = localStorage.getItem('contraseña');
-
-        if(username === obtenerUsuario && password === obtenerConstraseña){
-            errorMensaje = 'login exitoso';
-            window.location.href = '/productos';
-        } else{
-            errorMensaje = 'olvidaste tu contraseña?';
+            if (usuario) {
+                errorMensaje = 'Login exitoso';
+                userLog.set(usuario); // Almacena el usuario en el store
+                if (usuario.rol === 'admin') {
+                    window.location.href = '/productos';
+                } else {
+                    window.location.href = '/';
+                }
+            } else {
+                errorMensaje = 'Olvidaste tu contraseña?';
+            }
+        } catch (error) {
+            console.error('Hubo un problema con la solicitud:', error);
+            errorMensaje = 'Error de red. Por favor, inténtelo de nuevo.';
         }
     };
-
 </script>
+
+  
 
 
 <style>
@@ -50,10 +64,6 @@
                                 <div class="input-group input-group-outline mb-4">
                                     <input type="text" id="password" class="form-control" bind:value={password} required>
                                 </div>
-                                <div class="form-check form-switch d-flex align-items-center">
-                                    <input class="form-check-input" type="checkbox" id="rememberMe">
-                                    <label class="form-check-label my-auto ms-2" for="rememberMe">Remember me</label>
-                                </div>
                                 <div class="text-center">
                                     <button class="btn btn-success" type="submit">iniciar</button>    
                                 </div>
@@ -68,7 +78,7 @@
                                 <div class="mt-3 mb-4 position-relative text-center">
                                     <p
                                         class="text-sm font-weight-bold text-secondary text-border d-inline z-index-2 bg-white px-3">
-                                        or continue with
+                                        o continua con
                                     </p>
                                 </div>
                                 <div class="col-3 ms-auto px-1">
@@ -132,8 +142,8 @@
                                 </div>
                             </div>
                             <p class="mb-0 mt-3 text-sm mx-auto">
-                                Don't have an account?
-                                <a href="javascript:;" class="text-success text-gradient font-weight-bold">Sign up</a>
+                                No tienes una cuenta?
+                                <a href="javascript:;" class="text-success text-gradient font-weight-bold">Registrate</a>
                             </p>
                         </div>
                     </div>

@@ -320,9 +320,16 @@
   ],
   "usuario": [
     {
-      "nombre": "usuario",
-      "contraseña": "contraseña",
-      "id": "11f7"
+      "username": "usuario",
+      "password": "contraseña",
+      "rol": "user",
+      "id": "2"
+    },
+    {
+      "username": "admin",
+      "password": "admin",
+      "rol": "admin",
+      "id": "1"
     }
   ]
 }

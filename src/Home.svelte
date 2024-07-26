@@ -90,7 +90,7 @@
 
 
 
-  <div class="card card-body mx-2 mx-md-5 px-xxl-5">
+  <div class="card-body mx-2 mx-md-5">
     {#if productosEnPromocion.length > 0 && $selectedCategory === 'all'}
       <div class="row mt-1">
         <div class="row">

@@ -66,16 +66,16 @@
     }
   </script>
   
-  <div class="card border bg-gray {noDisponible ? 'bg-gray-200 ' : ''} position-relative">
+  <div class="card bg-gray {noDisponible ? 'bg-gray-200 ' : ''} position-relative">
     
     {#if producto.promocion === true && producto.activo === true}
-        <span class="bg-warning col-8 col-sm-6 text-white text-bold text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
-        Oferta {producto.descuento}%
+        <span class="bg-warning col-8 col-sm-6 text-white text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
+           {producto.descuento}% desct.º
         </span>
     {/if}
 
     {#if producto.activo === false}
-        <span class="bg-gray-600 col-7 col-sm-6 text-white text-bold text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
+        <span class="bg-gray-600 col-7 col-sm-6 text-white text-center position-absolute" style="z-index: 3; border-radius: 10px 0px 20px 0px;">
         Agotado
         </span>
     {/if}
@@ -154,13 +154,13 @@
       
     }
     .img-oferta:hover {
-      border: 2px solid #fb8c00;
-      border-bottom: 1px solid #fb8c00;
+      border: 2px solid #fff;
+      border-bottom: 1px solid #ffff;
     }
 
     .img-no-activo:hover{
-      border: 2px solid #6c757d;
-      border-bottom: 1px solid #6c757d;
+      border: 2px solid #ffff;
+      border-bottom: 1px solid #ffff;
 
     }
   

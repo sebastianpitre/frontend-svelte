@@ -1,7 +1,7 @@
 <script>
     import { onMount } from "svelte";
-    import Aside from "../components/Aside.svelte";
     import Swal from "sweetalert2";
+  import Nav from "../components/nav.svelte";
   
     export let id;
   
@@ -71,7 +71,7 @@
   </script>
   
   <main class="row col-12">
-    <Aside />
+    <Nav />
     <div class="col-12 col-md-6 mx-auto pt-3 mb-4 mb-md-0">
         <form on:submit={handleSubmit}>
           <div class="card p-3">
