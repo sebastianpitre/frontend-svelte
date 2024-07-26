@@ -5,8 +5,12 @@
     import Nav from '../components/nav.svelte';
 
 
-
+    let listCategorias = [];
     let listProductos = [];
+
+    fetch("http://localhost:8080/categorias")
+        .then((response) => response.json())
+        .then((results) => (listCategorias = results));
   
     fetch("http://localhost:8080/productos")
   
@@ -94,7 +98,12 @@
                                     
                                     <div class="d-flex flex-column justify-content-center">
                                         <h5 class="mb-0 text-sm">{values.nombre}</h5>
-                                        <p class="text-sm mb-0">Categoria: {values.idCategoria} </p>
+                                        
+                                        {#each listCategorias as item}
+                                            {#if item.id === values.idCategoria}
+                                                <p class="text-sm mb-0">Categoria: {item.nombre}</p>
+                                            {/if}
+                                        {/each}
                                     </div>
                                 </div>
                             </td>

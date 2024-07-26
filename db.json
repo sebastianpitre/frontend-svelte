@@ -330,6 +330,11 @@
       "password": "admin",
       "rol": "admin",
       "id": "1"
+    },
+    {
+      "id": "c18f",
+      "username": "usuario",
+      "password": "contraseña"
     }
   ]
 }

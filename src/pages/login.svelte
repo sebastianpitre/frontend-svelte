@@ -1,43 +1,29 @@
 <script>
-    import { userLog } from '../stores/login.js'; // Ajusta la ruta según sea necesario
+    import { createEventDispatcher } from 'svelte';
+    import { login } from '../stores/authService';
+    import { navigate } from 'svelte-routing';
+  
     let username = '';
     let password = '';
-    let errorMensaje = '';
-    
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        
-        try {
-            const response = await fetch("http://localhost:8080/usuario");
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const usuarios = await response.json();
-            const usuario = usuarios.find(u => u.username === username && u.password === password);
-
-            if (usuario) {
-                errorMensaje = 'Login exitoso';
-                userLog.set(usuario); // Almacena el usuario en el store
-                if (usuario.rol === 'admin') {
-                    window.location.href = '/productos';
-                } else {
-                    window.location.href = '/';
-                }
-            } else {
-                errorMensaje = 'Olvidaste tu contraseña?';
-            }
-        } catch (error) {
-            console.error('Hubo un problema con la solicitud:', error);
-            errorMensaje = 'Error de red. Por favor, inténtelo de nuevo.';
-        }
-    };
-</script>
+    let errorMessage = '';
+    const dispatch = createEventDispatcher();
+  
+    async function handleLogin() {
+      try {
+        await login(username, password);
+        dispatch('login');
+        navigate('/productos');
+      } catch (error) {
+        errorMessage = error.message;
+      }
+    }
+  </script>
 
   
 
 
 <style>
-    .errorMensaje{
+    .errorMessage{
         color: red;
     }
 </style>
@@ -55,7 +41,7 @@
                             </div>
                         </div>
                         <div class="card-body pb-0">
-                            <form on:submit={handleSubmit}>
+                            <form on:submit|preventDefault={handleLogin}>
                                 <label for="username" class="form-label">Email</label>
                                 <div class="input-group input-group-outline mb-3">
                                     <input type="text" id="username" class="form-control" bind:value={username} required>
@@ -68,8 +54,8 @@
                                     <button class="btn btn-success" type="submit">iniciar</button>    
                                 </div>
 
-                                {#if errorMensaje}
-                                    <p class="errorMensaje text-center">{errorMensaje}</p>
+                                {#if errorMessage}
+                                    <p class="errorMessage text-center">{errorMessage}</p>
                                 {/if}
                             </form>
                         </div>

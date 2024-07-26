@@ -1,6 +1,14 @@
 <script>
 
-    let currentUser = 'admin';
+  let currentUser = 'admin';
+
+  import { logout } from '../stores/authService';
+  import { navigate } from 'svelte-routing';
+
+  function handleLogout() {
+    logout();
+    navigate('/login');
+  }
 
    
 </script>
@@ -94,9 +102,9 @@
                         </a>
                       </li>
                       <li class="nav-item list-group-item border-0 p-0">
-                        <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                        <button class="dropdown-item py-2 ps-3 border-radius-md bg-danger" on:click={handleLogout}>
                           <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">cerrar sesion</h6>
-                        </a>
+                        </button>
                       </li>
                     </ul>
                   </div>
@@ -107,9 +115,9 @@
                       </a>
                     </div>
                     <div class="col-md-12 g-0">
-                      <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                      <button class="dropdown-item py-2 ps-3 border-radius-md bg-danger" on:click={handleLogout}>
                         <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">cerrar sesion</h6>
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -130,9 +138,9 @@
                           </a>
                         </li>
                         <li class="nav-item list-group-item border-0 p-0">
-                          <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                          <button class="dropdown-item py-2 ps-3 border-radius-md bg-danger" on:click={handleLogout}>
                             <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">cerrar sesion</h6>
-                          </a>
+                          </button>
                         </li>
                       </ul>
                     </div>
@@ -143,9 +151,9 @@
                         </a>
                       </div>
                       <div class="col-md-12 g-0">
-                        <a class="dropdown-item py-2 ps-3 border-radius-md bg-danger" href="/login">
+                        <button class="dropdown-item py-2 ps-3 border-radius-md bg-danger" on:click={handleLogout}>
                           <h6 class="dropdown-header text-white font-weight-bolder d-flex justify-content-cente align-items-center p-0">cerrar sesion</h6>
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>

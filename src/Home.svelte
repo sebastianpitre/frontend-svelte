@@ -10,7 +10,7 @@
   let categorias = [];
 
   // Accesos rápidos
-  let clasesCard = "col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2 mb-4 px-2";
+  let clasesCard = "col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2 col-xxl-2 mb-3 px-2";
 
   // Llamar a la API
   onMount(async () => {
@@ -91,6 +91,7 @@
 
 
   <div class="card-body mx-2 mx-md-5">
+    
     {#if productosEnPromocion.length > 0 && $selectedCategory === 'all'}
       <div class="row mt-1">
         <div class="row">
@@ -101,6 +102,11 @@
             <Card {producto} addToCart={handleAddToCart}/>
           </div>
         {/each}
+        <div class="bg-gradient-dark col page-header p-0 mb-3 mx-2 border-radius-2xl" style="background-image: url(&quot;/img/img-sena/ganaderia.jpg&quot;); background-position-y: 55%; background-size: cover; background-position-x: 70%;">
+        <span class="mask bg-gradient-dark opacity-5"></span>
+        <h5 class="col text-center text-white">ofertas</h5>
+        </div>
+
       </div>
     {/if}
 
@@ -125,6 +131,10 @@
                 </div>
               {/if}
             {/each}
+              <div class="bg-gradient-dark col page-header p-0 mb-3 mx-2 border-radius-2xl" style="background-image: url(&quot;/img/img-sena/ganaderia.jpg&quot;); background-position-y: 55%; background-size: cover; background-position-x: 70%;">
+              <span class="mask bg-gradient-dark opacity-5"></span>
+              <h5 class="col text-center text-white">{categoria.nombre}</h5>
+              </div>
           </div>
         </div>
       </div>
