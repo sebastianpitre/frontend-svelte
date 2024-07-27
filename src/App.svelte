@@ -1,15 +1,12 @@
 <script>
-	import Productos from './pages/productos.svelte';
-
-  import { Router, Route, Link, link } from 'svelte-routing';
+  import { Router, Route, navigate } from 'svelte-routing';
 
   import Home from './Home.svelte';
   import Categorias from './pages/categorias.svelte';
   import ProductForm from './pages/ProductForm.svelte';
-  import Dasboard from './pages/dasboard.svelte';
   import Login from './pages/login.svelte';
   import CategoryForm from './pages/CategoryForm.svelte';
-
+  import Productos from './pages/productos.svelte';
 
 </script>
 
@@ -27,10 +24,6 @@
     <Route path="/categorias" component={Categorias}/>
     <Route path="/categoria/editar/:id" component={CategoryForm} />
     <Route path="/categoria/nueva" component={CategoryForm} />
-
-
-    
-
 
   </div>
 </Router>

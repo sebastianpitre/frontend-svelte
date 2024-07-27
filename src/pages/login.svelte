@@ -1,29 +1,31 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
-    import { login } from '../stores/authService';
-    import { navigate } from 'svelte-routing';
+    import { onMount } from "svelte";
+    let username = "";
+    let password = "";
+    let error = "";
   
-    let username = '';
-    let password = '';
-    let errorMessage = '';
-    const dispatch = createEventDispatcher();
+    async function login() {
+      const response = await fetch("http://localhost:8080/usuario");
+      const users = await response.json();
+      const user = users.find(
+        (user) => user.username === username && user.password === password
+      );
   
-    async function handleLogin() {
-      try {
-        await login(username, password);
-        dispatch('login');
-        navigate('/productos');
-      } catch (error) {
-        errorMessage = error.message;
+      if (user) {
+        localStorage.setItem("user", JSON.stringify(user));
+        if (user.rol === "admin") {
+          window.location.href = "/productos";
+        } else {
+          window.location.href = "/";
+        }
+      } else {
+        error = "Usuario o contraseña incorrectos";
       }
     }
   </script>
 
-  
-
-
 <style>
-    .errorMessage{
+    .error{
         color: red;
     }
 </style>
@@ -41,7 +43,7 @@
                             </div>
                         </div>
                         <div class="card-body pb-0">
-                            <form on:submit|preventDefault={handleLogin}>
+                            <form on:submit|preventDefault={login}>
                                 <label for="username" class="form-label">Email</label>
                                 <div class="input-group input-group-outline mb-3">
                                     <input type="text" id="username" class="form-control" bind:value={username} required>
@@ -54,8 +56,8 @@
                                     <button class="btn btn-success" type="submit">iniciar</button>    
                                 </div>
 
-                                {#if errorMessage}
-                                    <p class="errorMessage text-center">{errorMessage}</p>
+                                {#if error}
+                                    <p class="error text-center">{error}</p>
                                 {/if}
                             </form>
                         </div>

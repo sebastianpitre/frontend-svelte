@@ -1,9 +1,14 @@
 <script>
 	import Footer from './../components/footer.svelte';
-    import { onMount } from 'svelte';
     import Swal from "sweetalert2";
     import Nav from '../components/nav.svelte';
 
+    import { onMount } from 'svelte';
+    import { protectRoute } from '../stores/auth';
+
+    onMount(() => {
+        protectRoute('admin');
+    });
 
     let listCategorias = [];
     let listProductos = [];

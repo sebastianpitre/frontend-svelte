@@ -16,6 +16,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
+    "firebase": "^10.12.4",
     "svelte-routing": "^2.13.0",
     "svelte-spa-router": "^4.0.1",
     "sweetalert2": "^11.12.2",

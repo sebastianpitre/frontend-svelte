@@ -102,10 +102,6 @@
             <Card {producto} addToCart={handleAddToCart}/>
           </div>
         {/each}
-        <div class="bg-gradient-dark col page-header p-0 mb-3 mx-2 border-radius-2xl" style="background-image: url(&quot;/img/img-sena/ganaderia.jpg&quot;); background-position-y: 55%; background-size: cover; background-position-x: 70%;">
-        <span class="mask bg-gradient-dark opacity-5"></span>
-        <h5 class="col text-center text-white">ofertas</h5>
-        </div>
 
       </div>
     {/if}
@@ -131,10 +127,6 @@
                 </div>
               {/if}
             {/each}
-              <div class="bg-gradient-dark col page-header p-0 mb-3 mx-2 border-radius-2xl" style="background-image: url(&quot;/img/img-sena/ganaderia.jpg&quot;); background-position-y: 55%; background-size: cover; background-position-x: 70%;">
-              <span class="mask bg-gradient-dark opacity-5"></span>
-              <h5 class="col text-center text-white">{categoria.nombre}</h5>
-              </div>
           </div>
         </div>
       </div>
