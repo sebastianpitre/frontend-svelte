@@ -114,9 +114,9 @@
 
             {#if isInCart}
               <div>
-                <button class="btn col btn-sm btn-blue" on:click={() => decrementQuantity(producto.id)}>-</button>
+                <button class="btn col btn-sm border border-dark" on:click={() => decrementQuantity(producto.id)}>-</button>
                 <span class="col p-1 btn disabled text-dark">{itemQuantity} {producto.unidadProducto}</span>
-                <button class="btn col btn-sm btn-success" on:click={() => incrementQuantity(producto.id)}>+</button>
+                <button class="btn col btn-sm border border-success text-success" on:click={() => incrementQuantity(producto.id)}>+</button>
               </div>
             {/if}
             {#if !isInCart}

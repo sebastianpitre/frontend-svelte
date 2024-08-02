@@ -7,7 +7,7 @@
 
     // Definimos las variables reactivas para el estado del formulario
     let id;
-    let icon = '';
+    let imagen = '';
     let nombre = '';
     
 
@@ -17,13 +17,13 @@
 
         const formData = {
             id,
-            icon,
+            imagen,
             nombre,
             
         };
 
         try {
-            const response = await fetch('http://localhost:8080/categorias', {
+            const response = await fetch('http://localhost:8086/api/publico/categorias', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -44,7 +44,7 @@
 
     let listCategorias = [];
 
-    fetch("http://localhost:8080/categorias")
+    fetch("http://localhost:8086/api/publico/categorias")
     // fetch("http://localhost:8080/api/admin/categorias")
     .then((response) => response.json())
     .then((results) => (listCategorias = results));
@@ -65,7 +65,7 @@
         });
 
         if (result.isConfirmed) {
-            const response = await fetch(`http://localhost:8080/categorias/${id}`, {
+            const response = await fetch(`http://localhost:8086/api/publico/categorias/${id}`, {
                 method: 'DELETE',
             });
 
@@ -128,7 +128,7 @@
                             <td>
                                 <div class="d-flex px-2 py-1">
                                     <div>
-                                        <img src="{values.icon}" alt="img" class=" avatar-xs me-3">
+                                        <img src="{values.imagen}" alt="img" class=" avatar-xs me-3">
                                     </div>
                                     <div class="d-flex flex-column justify-content-center">
                                         <h6 class="mb-0 text-xs">{values.nombre}</h6>

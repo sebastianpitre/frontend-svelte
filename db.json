@@ -1,19 +1,19 @@
 {
   "productos": [
     {
-      "sku": "128",
-      "nombre": "manzana roja",
-      "descripcion": "afafafafas",
-      "urlImagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGqj3UY3bgur2C374B2egajrQ7nVtFWHVsYA&s",
-      "urlFichaTecnica": "fasfasfasfasf",
-      "unidadProducto": "KG",
-      "cantidad": 1,
-      "precio": 2000,
+      "sku": "333",
+      "nombre": "papaDDD",
+      "descripcion": "lorem",
+      "urlImagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyK8jpWAnbgi-GMVEbyhknbNWjM8iGqXlkAg&s",
+      "urlFichaTecnica": null,
+      "unidadProducto": "GR",
+      "cantidad": 4,
+      "precio": 3000,
       "promocion": true,
-      "descuento": 10,
-      "stock": 12,
+      "descuento": 1,
+      "stock": 333,
       "activo": true,
-      "idCategoria": "4",
+      "idCategoria": 4,
       "idUsuario": 1,
       "id": "1"
     },
@@ -340,6 +340,23 @@
       "id": "a77d",
       "username": "usuario",
       "password": "contraseña"
+    }
+  ],
+  "header": [
+    {
+      "id": "123",
+      "urlImagen": "/img/img-sena/sena3.jpeg",
+      "posicionY": 83
+    },
+    {
+      "id": "2",
+      "urlImagen": "/img/img-sena/sena2.jpeg",
+      "posicionY": 50
+    },
+    {
+      "id": "3",
+      "urlImagen": "/img/img-sena/ganaderia.jpg",
+      "posicionY": 51
     }
   ]
 }

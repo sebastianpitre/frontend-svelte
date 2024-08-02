@@ -185,25 +185,6 @@
               </li>
               {/if}
             </ul>
-
-            <!-- Modal -->
-            {#if showModal}
-            <div class="modal" on:click|self={closeModal}>
-              <div class="modal-content">
-                <span class="close" on:click={closeModal}>&times;</span>
-                <h3 class="text-dark text-center text-edo">Carrito</h3>
-                <Carrito/>
-                <div class="row text-center">
-                  <div class="col-6">
-                    <button id="borrarCarritoBtn" class="btn btn-sm btn-danger">Vaciar carrito</button>
-                  </div>
-                  <div class="col-6">
-                    <button id="openModal2" class="btn btn-sm btn-success">Confirmar pedido</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/if}
           </div>
         </div>
       </nav>
@@ -217,40 +198,5 @@
 
 nav{
     background-color: #ffffffea;
-  }
-  .modal {
-    display: block;
-    position: fixed;
-    z-index: 9999;
-    padding-top: 50px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-  }
-
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
   }
 </style>

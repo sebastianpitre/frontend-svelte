@@ -16,11 +16,11 @@
   onMount(async () => {
     try {
       // Obtener productos
-      const responseProductos = await fetch("http://localhost:8080/productos");
+      const responseProductos = await fetch("http://localhost:8086/api/publico/productos");
       listProductos = await responseProductos.json();
       
       // Obtener categorías
-      const responseCategorias = await fetch("http://localhost:8080/categorias");
+      const responseCategorias = await fetch("http://localhost:8086/api/publico/categorias");
       categorias = await responseCategorias.json();
       
     } catch (error) {
@@ -59,7 +59,7 @@
   // Lógica para obtener productos desde API u otra fuente
   onMount(async () => {
     try {
-      const responseProductos = await fetch("http://localhost:8080/productos");
+      const responseProductos = await fetch("http://localhost:8086/api/publico/productos");
       listProductos = await responseProductos.json();
     } catch (error) {
       console.error('Error al obtener productos:', error);

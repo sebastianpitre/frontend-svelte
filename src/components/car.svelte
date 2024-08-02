@@ -13,18 +13,24 @@
 
   <div id="modal1" class="modal">
     <div class="modal-content">
-      <span class="close text-center card bg-danger text-white col-1" id="closeModal1">&times;</span>
-      <h3 class="text-dark text-center text-edo">Carrito</h3>
+      <div class="col">
+        <span class="close text-center card bg-danger text-white" id="closeModal1">&times;</span>
+      </div>
+      
+      <p class="text-dark text-bold text-2xl mt-n5">Carrito</p>
       <Carrito/>
 
-      <div class="row text-center">
-        <div class="col-6">
-          <button id="borrarCarritoBtn" class="btn btn-sm btn-danger">vaciar carrito</button>
-        </div>
-        <div class="col-6">
-          <button id="openModal2" class="btn btn-sm btn-success">Confirmar pedido</button>
+      <div class="barra bg-white">
+        <div class="row text-center mt-4 mb-n2">
+          <div class="col-6">
+            <button id="borrarCarritoBtn" class="btn btn-sm btn-danger">vaciar carrito</button>
+          </div>
+          <div class="col-6">
+            <button id="openModal2" class="btn btn-sm btn-success">Confirmar pedido</button>
+          </div>
         </div>
       </div>
+      
     </div>
     <script>
       // Función para abrir el Modal 1
@@ -63,14 +69,18 @@
       background-color: rgba(0, 0, 0, 0.5);
     }
 
+    .barra{
+      position: sticky;
+      bottom: 5px;
+    }
+
     /* Estilo para el contenido del modal */
     .modal-content {
       background-color: #fefefe;
       margin: auto;
       padding: 20px;
       border: 1px solid #888;
-      width: 80%;
-      max-width: 600px;
+      width: 85%;
     }
 
     /* Botón para cerrar el modal */
@@ -79,6 +89,7 @@
       float: right;
       font-size: 28px;
       font-weight: bold;
+      width: 50px;
     }
 
     .close:hover,

@@ -17,7 +17,7 @@
         .then((response) => response.json())
         .then((results) => (listCategorias = results));
   
-    fetch("http://localhost:8080/productos")
+    fetch("http://localhost:8086/api/publico/productos")
   
     .then((response)=>response.json())
     .then((results)=> (listProductos=results))
@@ -37,7 +37,7 @@
         });
 
         if (result.isConfirmed) {
-            const response = await fetch(`http://localhost:8080/productos/${id}`, {
+            const response = await fetch(`http://localhost:8086/api/publico/productos${id}`, {
                 method: 'DELETE',
             });
 

@@ -38,7 +38,7 @@
         .then((results) => (listUndMedida = results));
   
       if (id) {
-        const response = await fetch(`http://localhost:8080/productos/${id}`);
+        const response = await fetch(`http://localhost:8086/api/publico/productos/${id}`);
         const product = await response.json();
         sku = product.sku;
         nombre = product.nombre;
@@ -78,7 +78,7 @@
       };
   
       try {
-        const method = id ? "PUT" : "POST";
+        const method = id ? "PATCH" : "POST";
         const url = id ? `http://localhost:8080/productos/${id}` : "http://localhost:8080/productos";
   
         const response = await fetch(url, {

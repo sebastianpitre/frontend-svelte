@@ -1,35 +1,47 @@
 <script>
-    import { selectedCategory } from '../stores/stores';
-  
-    let listCategorias = [];
-  
-    // Obtener categorías
-    fetch("http://localhost:8080/categorias")
-      .then((response) => response.json())
-      .then((results) => (listCategorias = results));
-  
-    // Función para seleccionar una categoría
-    function selectCategory(categoria) {
-      $selectedCategory = categoria;
+  import { onMount } from 'svelte';
+  import { selectedCategory } from '../stores/stores';
+  import { writable } from 'svelte/store';
+
+  let listCategorias = writable([]);
+
+  // Obtener categorías cuando el componente se monta
+  onMount(async () => {
+    try {
+      const response = await fetch('http://localhost:8086/api/publico/categorias');
+      if (!response.ok) {
+        throw new Error('Error al obtener las categorías');
+      }
+      const results = await response.json();
+      listCategorias.set(results);
+    } catch (error) {
+      console.error('Error:', error);
     }
-  </script>
-  
+  });
+
+  // Función para seleccionar una categoría
+  function selectCategory(categoria) {
+    selectedCategory.set(categoria);
+  }
+</script>
+
+
   <div class="_1LnEC">
     <ul class="_3r4FV mb-0 py-2 mt-1 border-radius-lg">
       <li class="_2X7zW ms-n4">
         <a class="_1uCty _18olZ text-dark { $selectedCategory === 'all' ? 'selected' : '' }" href="/" on:click|preventDefault={() => selectCategory('all')}>Todos</a>
       </li>
-      {#each listCategorias as values}
+      {#each $listCategorias as values}
         <li class="_2X7zW">
           <a class="_1uCty { $selectedCategory === values.nombre ? 'selected' : '' }" href="/estilos/{values.nombre}/" on:click|preventDefault={() => selectCategory(values.nombre)}>
-            <img class="icon opacity-9 bg-white" src="{values.icon}" alt="icon" width="11%">
+            <!-- <img class="icon opacity-9 bg-white" src="{values.icon}" alt="icon" width="11%"> -->
             <span class="ms-2 text-dark me-3 me-xl-0">{values.nombre}</span>
           </a>
         </li>
       {/each}
     </ul>
   </div>
-  
+
 <style>
     
 ._1LnEC {
