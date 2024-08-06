@@ -35,7 +35,7 @@
             cancelButtonColor: '#3085d6',
             confirmButtonText: 'Sí, eliminar'
         });
-
+        
         if (result.isConfirmed) {
             const response = await fetch(`http://localhost:8086/api/publico/productos${id}`, {
                 method: 'DELETE',
@@ -76,6 +76,8 @@
 
 <main>
     <Nav/>
+
+    
 
     <div class="col-12 col-md-9 mx-auto mb-4 mb-md-0">
         

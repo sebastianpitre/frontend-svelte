@@ -7,6 +7,8 @@
   import Login from './pages/login.svelte';
   import CategoryForm from './pages/CategoryForm.svelte';
   import Productos from './pages/productos.svelte';
+  import Perfil from './pages/perfil.svelte';
+  import Usuarios from './pages/usuarios.svelte';
 
 </script>
 
@@ -15,6 +17,8 @@
     <Route path="/" component={Home} />
     
     <Route path="/login" component={Login} />
+    <Route path="/perfil" component={Perfil} />
+    <Route path="/usuarios" component={Usuarios} />
 
     <Route path="/productos" component={Productos}/>
     <Route path="/producto/editar/:id" component={ProductForm} />

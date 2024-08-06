@@ -265,6 +265,23 @@
       "fechaModificacion": "2024-07-19T12:00:00Z",
       "idUsuario": 0,
       "id": "3fc6"
+    },
+    {
+      "id": "a334",
+      "sku": "asfasf",
+      "nombre": "asfasfasf",
+      "descripcion": "asfasf",
+      "urlImagen": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/1400C/production/_93723918_thinkstockphotos-627042504.jpg.webp",
+      "urlFichaTecnica": "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/1400C/production/_93723918_thinkstockphotos-627042504.jpg.webp",
+      "unidadProducto": "UND",
+      "cantidad": 7,
+      "precio": 8000,
+      "promocion": true,
+      "descuento": 19,
+      "stock": 7,
+      "activo": true,
+      "idCategoria": "3",
+      "idUsuario": 1
     }
   ],
   "categorias": [

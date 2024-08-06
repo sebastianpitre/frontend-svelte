@@ -13,19 +13,19 @@
     let unidadProducto = "";
     let cantidad = 0;
     let precio = 0.0;
-    let promocion = false;
     let descuento = 0;
     let stock = 0;
-    let activo = true;
     let idCategoria = 0;
     let idUsuario = 0;
+    let activo = true;
+    let promocion = false;
   
     let listCategorias = [];
     let listUndMedida = [];
     let Usuario = [];
   
     onMount(async () => {
-      fetch("http://localhost:8080/categorias")
+      fetch("http://localhost:8086/api/publico/categorias")
         .then((response) => response.json())
         .then((results) => (listCategorias = results));
 
@@ -79,7 +79,7 @@
   
       try {
         const method = id ? "PATCH" : "POST";
-        const url = id ? `http://localhost:8080/productos/${id}` : "http://localhost:8080/productos";
+        const url = id ? `http://localhost:8086/api/publico/productos/${id}` : "http://localhost:8086/api/publico/productos";
   
         const response = await fetch(url, {
           method,
