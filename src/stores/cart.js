@@ -41,3 +41,10 @@ export function decrementQuantity(productoId) {
     return items;
   });
 }
+
+
+export function vaciarCarrito() {
+  localStorage.removeItem('cart');
+  cart.set([]); 
+  // Opcional: puedes actualizar la vista o hacer otras acciones aquí si es necesario.
+}

@@ -5,6 +5,7 @@
   import Footer from '../components/footer.svelte';
   import Nav from '../components/nav.svelte';
   import Slide from '../components/slide.svelte';
+    import MenuAcciones from '../components/MenuAcciones.svelte';
 
     // Definimos las variables reactivas para el estado del formulario
     let id;
@@ -46,7 +47,7 @@
     let listCategorias = [];
 
     fetch("http://localhost:8086/api/publico/categorias")
-    // fetch("http://localhost:8080/api/admin/categorias")
+    // fetch("http://localhost:8080/api/publico/categorias")
     .then((response) => response.json())
     .then((results) => (listCategorias = results));
 
@@ -103,8 +104,9 @@
 <main>
     <Nav />
 
+    <MenuAcciones/>
     
-    <div class="col-12 col-md-6 mx-auto mt-5 pt-3 mb-4 mb-md-0">
+    <div class="col-12 col-md-6 mx-auto mt-3 mb-4 mb-md-0">
 
         <div class="col-12 text-end">
             <a href="/categoria/nueva" class="btn btn-sm btn-success">Agregar categoria</a>
@@ -121,7 +123,6 @@
                             <th
                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                 acciones</th>
-                            <th class="text-secondary opacity-7"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -141,6 +142,12 @@
                                 <a class="btn btn-sm btn-outline-success" href={`/categoria/editar/${values.id}`}>Editar</a>
                                 <button class="btn btn-sm btn-outline-danger" on:click={() => eliminarCategoria(values.id)}>Eliminar</button>
                                 
+                            </td>
+                        </tr>
+                        {:else}
+                        <tr>
+                            <td class="text-center">
+                                No se encontraron categorias  
                             </td>
                         </tr>
                         {/each}

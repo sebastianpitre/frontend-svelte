@@ -1,8 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import Carrito from "./carrito.svelte";
   let user = null;
-  let showModal = false;
+
 
   onMount(() => {
     const storedUser = localStorage.getItem("user");
@@ -16,16 +15,18 @@
     window.location.href = "/login";
   }
 
+
+
+  // modal carrito
+  import { isModalOpen } from '../stores/modalStore.js';
+
   function openModal() {
-    showModal = true;
+    isModalOpen.set(true);
   }
 
-  function closeModal() {
-    showModal = false;
-  }
 </script>
 
-<div class="position-sticky mobile-menu z-index-sticky top-0 ">
+<div class="position-sticky mobile-menu z-index-sticky mb-6 top-0 ">
   <div class="row">
     <div class="col-12">
       <nav class="navbar navbar-expand-lg top-0 z-index-fixed shadow position-absolute py-0 start-0 end-0">
@@ -174,10 +175,10 @@
               {:else}
               <li class="nav-item dropdown dropdown-hover">
                   
-                <div class="btn btn-sm btn-success mb-0" on:click={openModal}>
+                <button class="btn btn-sm btn-success mb-0" on:click={openModal}>
                   <img class="icon opacity-9 mt-n1" src="/img/icon/cart.svg" alt="icon" width="20px">
                   <span class=" me-xl-0">carrito</span>
-                </div>
+                </button>
               </li>
 
               <li class="nav-item dropdown dropdown-hover ms-2">

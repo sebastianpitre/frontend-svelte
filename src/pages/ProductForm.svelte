@@ -5,18 +5,18 @@
   
     export let id;
   
-    let sku = "";
-    let nombre = "";
-    let descripcion = "";
-    let urlImagen = "";
-    let urlFichaTecnica = "";
-    let unidadProducto = "";
-    let cantidad = 0;
-    let precio = 0.0;
-    let descuento = 0;
-    let stock = 0;
-    let idCategoria = 0;
-    let idUsuario = 0;
+    let sku = "fff";
+    let nombre = "fff";
+    let descripcion = "fff";
+    let urlImagen = "ffff";
+    let urlFichaTecnica = "ffff";
+    let unidadProducto = "L";
+    let cantidad = 10;
+    let precio = 1000;
+    let descuento = 10;
+    let stock = 10;
+    let idCategoria = 10;
+    let idUsuario = 10;
     let activo = true;
     let promocion = false;
   

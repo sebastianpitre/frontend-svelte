@@ -361,12 +361,12 @@
   ],
   "header": [
     {
-      "id": "123",
-      "urlImagen": "/img/img-sena/sena3.jpeg",
-      "posicionY": 83
+      "id": "1",
+      "urlImagen": "/img/img-sena/perro.jpeg",
+      "posicionY": 51
     },
     {
-      "id": "2",
+      "id": "22",
       "urlImagen": "/img/img-sena/sena2.jpeg",
       "posicionY": 50
     },
@@ -374,6 +374,12 @@
       "id": "3",
       "urlImagen": "/img/img-sena/ganaderia.jpg",
       "posicionY": 51
+    },
+    {
+      "id": "4",
+      "urlImagen": "/img/img-sena/sena3.jpeg",
+      "posicionY": 83
     }
+    
   ]
 }
