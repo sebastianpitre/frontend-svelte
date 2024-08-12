@@ -15,7 +15,7 @@
       <h4 class="text-muted mt-3">El carrito está vacio</h4>
     </div>
     {/if}
-    <div class="row">
+    <div class="row justify-content-center">
       {#each cartItems as item (item.id)}
       <div class="col-12 col-sm-6 p-2">
         <div class="card border mx-0 px-3 py-2">

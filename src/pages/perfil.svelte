@@ -5,7 +5,7 @@
 </script>
 
 <header class="bg-gradient-dark">
-    <div class="page-header min-vh-25" style="background-image: url(&quot;assets/img/product/perro1.jpg&quot;); background-position-y: 50%; background-size: cover; background-position-x: 70%;">
+    <div class="page-header min-vh-35" style="background-image: url(&quot;/img/img-sena/sena2.jpeg&quot;); background-position-y: 60%; background-size: cover; background-position-x: 70%;">
       <span class="mask bg-gradient-dark opacity-8"></span>
       
     </div>
