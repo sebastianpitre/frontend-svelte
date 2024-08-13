@@ -92,7 +92,8 @@
 
 
 
-  <div class="card-body mx-2 mx-md-5">
+
+  <div class="card-body mx-3 mx-md-5">
     
     {#if productosEnPromocion.length > 0 && $selectedCategory === 'all'}
       <div class="row mt-1">
@@ -134,7 +135,9 @@
       </div>
     {/each}
   </div>
+  <Menufooter/>
+
   <Footer/>
 
-  <Menufooter/>
+  
 </main>

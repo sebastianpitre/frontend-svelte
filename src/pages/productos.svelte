@@ -6,6 +6,7 @@
     import { onMount } from 'svelte';
     import { protectRoute } from '../stores/auth';
     import MenuAcciones from '../components/MenuAcciones.svelte';
+    import Menufooter from '../components/menufooter.svelte';
 
     onMount(() => {
         protectRoute('admin');
@@ -87,7 +88,7 @@
                 <div class="col-12 text-end">
                     <a href="/producto/nuevo" class="btn btn-sm btn-success">Agregar producto</a>
                 </div>
-                <div class="card">
+                <div class="card p-2">
                     <div class="table-responsive">
                         <table class="table align-items-center mb-0">
                             <thead>
@@ -158,7 +159,7 @@
 
     
 
-    
+    <Menufooter/>
 
     <Footer/>
 </main>

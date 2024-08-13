@@ -1,5 +1,4 @@
-// src/stores/cart.js
-import { writable } from 'svelte/store';
+import { writable, derived } from 'svelte/store';
 
 const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
 export const cart = writable(storedCart);
@@ -7,6 +6,14 @@ export const cart = writable(storedCart);
 cart.subscribe(value => {
   localStorage.setItem('cart', JSON.stringify(value));
 });
+
+// Contar el número total de productos (considerando cantidades)
+export const totalProducts = derived(cart, $cart =>
+  $cart.reduce((total, item) => total + item.quantity, 0)
+);
+
+// Contar el número de productos diferentes en el carrito
+export const productCount = derived(cart, $cart => $cart.length);
 
 export function addToCart(producto) {
   cart.update(items => {
@@ -32,19 +39,18 @@ export function incrementQuantity(productoId) {
 
 export function decrementQuantity(productoId) {
   cart.update(items => {
+    let itemsUpdated = items;
     const item = items.find(item => item.id === productoId);
     if (item && item.quantity > 1) {
       item.quantity -= 1;
     } else {
-      items = items.filter(item => item.id !== productoId);
+      itemsUpdated = items.filter(item => item.id !== productoId);
     }
-    return items;
+    return itemsUpdated;
   });
 }
 
-
 export function vaciarCarrito() {
   localStorage.removeItem('cart');
-  cart.set([]); 
-  // Opcional: puedes actualizar la vista o hacer otras acciones aquí si es necesario.
+  cart.set([]);
 }
