@@ -12,12 +12,12 @@
   }
 </script>
 
-<div class="modal" class:open={$isModalOpen} on:click={handleClickOutside}>
+<div class="modal" class:open={$isModalOpen} on:click={handleClickOutside} role="dialog" aria-modal="true">
   <div class="modal-content">
     <div class="col">
-      <span class="close text-center card bg-danger text-white" on:click={() => isModalOpen.set(false)}>&times;</span>
+      <span class="close position-absolute text-center text-gray" on:click={() => isModalOpen.set(false)}>&times;</span>
     </div>
-    <p class="text-dark text-bold text-2xl mt-n5">Carrito</p>
+    <p class="text-dark text-bold text-2xl">Carrito</p>
     <Carrito />
     <div class="barra bg-white">
       <div class="row text-center mt-4 mb-n2">
@@ -60,10 +60,11 @@
 
   .close {
     color: #aaa;
-    float: right;
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
     width: 50px;
+    top: -7px;
+    right: 0px;
   }
 
   .close:hover,

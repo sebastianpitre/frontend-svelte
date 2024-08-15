@@ -47,7 +47,6 @@
     let listCategorias = [];
 
     fetch("http://localhost:8086/api/publico/categorias")
-    // fetch("http://localhost:8080/api/publico/categorias")
     .then((response) => response.json())
     .then((results) => (listCategorias = results));
 

@@ -42,8 +42,8 @@
   });
 </script>
 
-<header class="bg-gradient-dark mx-0 mx-md-2 mx-md-5 border-radius-2xl">
-  <div class="page-header height-responsive border-radius-md-2xl" style={backgroundStyle}>
+<header class="bg-gradient-dark mx-2 mt-2 mx-md-2 mx-md-5 border-radius-2xl">
+  <div class="page-header height-responsive border-radius-2xl" style={backgroundStyle}>
     <span class="mask bg-gradient-dark opacity-3"></span>
     <div class="container">
       <div class="row justify-content-center">
