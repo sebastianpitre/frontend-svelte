@@ -20,33 +20,36 @@ function logout() {
 <Slide/>
 
 <div class="container">
-    <div class="card p-4 mt-n4">
-        Hola, Usuario
-        <div class="row">
-          <div class="col-12 mb-2">
-            <div class="border-bottom p-3">
-              <p class="my-auto">⚙️ texto ></p>
-            </div>
+  <div class="col-12 col-md-6 mx-auto">
+    <div class="card p-4 mt-n5">
+      Hola, Usuario
+      <div class="row">
+        <a class="col-12 mb-2" href="datos-personales">
+          <div class="border-bottom p-3">
+            <p class="my-auto">Mi perfil</p>
           </div>
-          <div class="col-12 mb-2">
-            <div class="border-bottom p-3">
-              <p class="my-auto">⚙️ texto ></p>
-            </div> 
-          </div>
-          <div class="col-12 mb-2">
-            <div class="border-bottom p-3">
-              <p class="my-auto">⚙️ texto ></p>
-            </div> 
-          </div>
+        </a>
+        <div class="col-12 mb-2">
+          <div class="border-bottom p-3">
+            <p class="my-auto">Mis pedidos</p>
+          </div> 
         </div>
-    </div>
+        <div class="col-12 mb-2">
+          <div class="border-bottom p-3">
+            <p class="my-auto">Dirección</p>
+          </div> 
+        </div>
+      </div>
+  </div>
 
-    <div class="container my-4">
-      <button class=" btn btn-sm btn-danger mb-0" on:click={logout}>
-        <img class="icon opacity-9" src="/img/icon/logout.svg" alt="icon" width="20px">
-        cerrar sesion
-      </button>
-    </div>
+  <div class="container my-4">
+    <button class=" btn btn-sm btn-danger mb-0" on:click={logout}>
+      <img class="icon opacity-9" src="/img/icon/logout.svg" alt="icon" width="20px">
+      cerrar sesion
+    </button>
+  </div>
+  </div>
+    
 </div>
 
 <Menufooter/>

@@ -12,8 +12,13 @@
         protectRoute('admin');
     });
 
+    let listCategorias = [];
     let listProductos = [];
 
+    fetch("http://localhost:8086/api/publico/categorias")
+        .then((response) => response.json())
+        .then((results) => (listCategorias = results));
+  
     fetch("http://localhost:8086/api/publico/productos")
   
     .then((response)=>response.json())

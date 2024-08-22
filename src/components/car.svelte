@@ -10,6 +10,12 @@
       isModalOpen.set(false);
     }
   }
+
+  import { generatePDF } from '../stores/pdf'; // Ajusta la ruta según tu estructura de archivos
+
+  function handlePrintPDF() {
+    generatePDF();
+  }
 </script>
 
 <div class="modal" class:open={$isModalOpen} on:click={handleClickOutside} role="dialog" aria-modal="true">
@@ -26,6 +32,7 @@
         </div>
         <div class="col-6">
           <button class="btn btn-sm btn-success">Confirmar pedido</button>
+          <button class="btn btn-sm btn-danger" on:click={handlePrintPDF}>Imprimir PDF</button>
         </div>
       </div>
     </div>

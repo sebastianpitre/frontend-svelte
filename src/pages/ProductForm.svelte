@@ -34,9 +34,9 @@
       cantidad = product.cantidad || 0;
       precio = product.precio || 0;
       promocion = product.promocion || false;
-      descuento = product.descuento || 0;
+      descuento = product.descuento;
       stock = product.stock || 0;
-      activo = product.activo || true;
+      activo = product.activo;
       idCategoria = product.idCategoria || 0;
       idUsuario = product.idUsuario || 0;
     }
@@ -178,16 +178,16 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
-            <div class="input-group input-group-static my-2">
-              <label>Promoción</label>
+          <div class="col-12 col-md-3">
+            <div class="form-check form-switch my-2">
+              <label class="form-check-label">Promoción</label>
               <input type="checkbox" class="form-check-input" bind:checked={promocion} />
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
-            <div class="input-group input-group-static my-2">
-              <label>Activo</label>
+          <div class="col-12 col-md-3">
+            <div class="form-check form-switch my-2">
+              <label class="form-check-label">Activo</label>
               <input type="checkbox" class="form-check-input" bind:checked={activo} />
             </div>
           </div>
@@ -222,48 +222,8 @@
     background-color: #eee;
   }
 
-  .toggle-switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 24px;
-    margin: 10px;
-  }
-
-  .toggle-switch .toggle-input {
-    display: none;
-  }
-
-  .toggle-switch .toggle-label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 24px;
-    background-color: #000;
-    border-radius: 34px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-
-  .toggle-switch .toggle-label::before {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    top: 2px;
-    left: 2px;
-    background-color: #fff;
-    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s;
-  }
-
-  .toggle-switch .toggle-input:checked + .toggle-label {
+  .form-switch .form-check-input:checked {
+    border-color: #42424a;
     background-color: #4CAF50;
-  }
-
-  .toggle-switch .toggle-input:checked + .toggle-label::before {
-    transform: translateX(16px);
-  }
+}
 </style>
